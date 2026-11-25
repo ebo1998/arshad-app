@@ -1,0 +1,2027 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>بوابة معاهد التدريب النفطي في العراق وكركوك</title>
+    
+    <!-- خطوط جوجل لدعم العربية والكردية والتركمانية والإنجليزية بوضوح عالٍ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- مكتبة Tailwind CSS للتنسيق المتجاوب -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'Noto Naskh Arabic', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: 'var(--color-primary-50)',
+                            100: 'var(--color-primary-100)',
+                            500: 'var(--color-primary-500)',
+                            600: 'var(--color-primary-600)',
+                            700: 'var(--color-primary-700)',
+                            800: 'var(--color-primary-800)',
+                            900: 'var(--color-primary-900)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* متغيرات الألوان القابلة للتخصيص */
+        :root {
+            --color-primary-50: #f0f9ff;
+            --color-primary-100: #e0f2fe;
+            --color-primary-500: #0284c7;
+            --color-primary-600: #0369a1;
+            --color-primary-700: #075985;
+            --color-primary-800: #0c4a6e;
+            --color-primary-900: #082f49;
+            --base-font-size: 16px;
+        }
+
+        [data-theme="emerald"] {
+            --color-primary-50: #ecfdf5;
+            --color-primary-100: #d1fae5;
+            --color-primary-500: #059669;
+            --color-primary-600: #047857;
+            --color-primary-700: #065f46;
+            --color-primary-800: #064e3b;
+            --color-primary-900: #022c22;
+        }
+
+        [data-theme="amber"] {
+            --color-primary-50: #fffbeb;
+            --color-primary-100: #fef3c7;
+            --color-primary-500: #d97706;
+            --color-primary-600: #b45309;
+            --color-primary-700: #92400e;
+            --color-primary-800: #78350f;
+            --color-primary-900: #451a03;
+        }
+
+        [data-theme="slate"] {
+            --color-primary-50: #f8fafc;
+            --color-primary-100: #f1f5f9;
+            --color-primary-500: #475569;
+            --color-primary-600: #334155;
+            --color-primary-700: #1e293b;
+            --color-primary-800: #0f172a;
+            --color-primary-900: #020617;
+        }
+
+        html {
+            font-size: var(--base-font-size);
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        body {
+            overflow-x: hidden;
+            max-width: 100vw;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* إخفاء شريط التمرير مع الحفاظ على التمرير السلس للتبويبات */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* تنسيقات الطباعة */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .print-break {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 min-h-screen flex flex-col">
+
+    <!-- لوحة الإعدادات الموحدة العلوية (Top Utility Bar) -->
+    <header class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm no-print">
+        <div class="max-w-6xl mx-auto px-3 py-2.5">
+            <!-- الصف العلوي: الشعار + أدوات التحكم السريعة -->
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <!-- الهوية -->
+                <div class="flex items-center gap-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-primary-600 text-white flex items-center justify-center shadow-md shrink-0">
+                        <i class="fa-solid fa-oil-well text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 id="ui-app-title" class="font-extrabold text-sm sm:text-base md:text-lg text-slate-900 dark:text-white leading-tight">
+                            بوابة معاهد التدريب النفطي
+                        </h1>
+                        <p id="ui-app-subtitle" class="text-[11px] sm:text-xs text-primary-600 dark:text-primary-400 font-semibold">
+                            العراق • كركوك • الدليل الشامل والامتحانات
+                        </p>
+                    </div>
+                </div>
+
+                <!-- شريط الأدوات الموحد (اللغة، الخط، الثيم، الوضع الليلي، الطباعة) -->
+                <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                    <!-- محول اللغات -->
+                    <div class="relative">
+                        <select id="lang-selector" onchange="changeLanguage(this.value)" aria-label="اختر اللغة"
+                            class="bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 text-xs sm:text-sm rounded-xl px-2.5 py-2 font-bold focus:outline-none focus:ring-2 focus:ring-primary-500 cursor-pointer">
+                            <option value="ar">🇮🇶 العربية</option>
+                            <option value="ckb">☀️ کوردی (سۆرانی)</option>
+                            <option value="kmr">☀️ Kurdî (Badînî)</option>
+                            <option value="tk">🇹🇲 Türkmençe</option>
+                            <option value="en">🇬🇧 English</option>
+                        </select>
+                    </div>
+
+                    <!-- التحكم بحجم الخط -->
+                    <div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-xl p-0.5 border border-slate-200 dark:border-slate-700">
+                        <button onclick="adjustFontSize(-1)" title="تصغير الخط" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-white dark:hover:bg-slate-700 text-xs font-bold transition">A-</button>
+                        <button onclick="resetFontSize()" title="الحجم الافتراضي" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-white dark:hover:bg-slate-700 text-xs font-bold transition">A</button>
+                        <button onclick="adjustFontSize(1)" title="تكبير الخط" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-white dark:hover:bg-slate-700 text-xs font-bold transition">A+</button>
+                    </div>
+
+                    <!-- تخصيص ألوان الثيم -->
+                    <div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 rounded-xl px-2 py-1.5 border border-slate-200 dark:border-slate-700">
+                        <button onclick="setThemeColor('default')" title="أزرق نفطي" class="w-4 h-4 rounded-full bg-sky-600 ring-2 ring-offset-1 ring-transparent hover:scale-110 transition"></button>
+                        <button onclick="setThemeColor('emerald')" title="أخضر هندسي" class="w-4 h-4 rounded-full bg-emerald-600 ring-2 ring-offset-1 ring-transparent hover:scale-110 transition"></button>
+                        <button onclick="setThemeColor('amber')" title="ذهبي صناعي" class="w-4 h-4 rounded-full bg-amber-600 ring-2 ring-offset-1 ring-transparent hover:scale-110 transition"></button>
+                        <button onclick="setThemeColor('slate')" title="رمادي معدني" class="w-4 h-4 rounded-full bg-slate-700 ring-2 ring-offset-1 ring-transparent hover:scale-110 transition"></button>
+                    </div>
+
+                    <!-- الوضع الليلي / النهاري -->
+                    <button onclick="toggleDarkMode()" id="dark-mode-btn" title="تبديل الوضع الليلي"
+                        class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-primary-50 dark:hover:bg-slate-700 transition">
+                        <i class="fa-solid fa-moon" id="dark-icon"></i>
+                    </button>
+
+                    <!-- زر الطباعة / التصدير -->
+                    <button onclick="window.print()" title="طباعة أو حفظ كـ PDF"
+                        class="w-9 h-9 rounded-xl bg-primary-600 text-white flex items-center justify-center hover:bg-primary-700 shadow-sm transition">
+                        <i class="fa-solid fa-print"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- شريط التنقل الرئيسي بين الأقسام -->
+            <nav class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-2.5 mt-2 border-t border-slate-100 dark:border-slate-800">
+                <button onclick="switchMainView('guide')" id="nav-guide"
+                    class="nav-btn shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-primary-600 text-white shadow-sm">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span id="ui-nav-guide">دليل الدراسة وكركوك</span>
+                </button>
+                <button onclick="switchMainView('departments')" id="nav-departments"
+                    class="nav-btn shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-primary-50">
+                    <i class="fa-solid fa-industry"></i>
+                    <span id="ui-nav-depts">الأقسام والمواد (كورس 1 و2 ودور 2)</span>
+                </button>
+                <button onclick="switchMainView('exams')" id="nav-exams"
+                    class="nav-btn shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-primary-50">
+                    <i class="fa-solid fa-file-pen"></i>
+                    <span id="ui-nav-exams">بنك الأسئلة والامتحانات</span>
+                </button>
+                <button onclick="switchMainView('essay')" id="nav-essay"
+                    class="nav-btn shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-primary-50">
+                    <i class="fa-solid fa-pen-ruler"></i>
+                    <span id="ui-nav-essay">الأسئلة التحريرية والمخططات</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-5 py-5 space-y-6">
+
+        <!-- ========================================================= -->
+        <!-- القسم 1: الصفحة الرئيسية ودليل الدراسة ومعهد كركوك          -->
+        <!-- ========================================================= -->
+        <section id="view-guide" class="space-y-6 animate-fadeIn">
+            
+            <!-- بطاقة ترحيبية ومؤشر التقدم -->
+            <div class="bg-gradient-to-br from-primary-700 via-primary-800 to-slate-900 text-white rounded-3xl p-5 sm:p-7 shadow-lg relative overflow-hidden">
+                <div class="relative z-10 max-w-3xl space-y-3">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 text-xs font-bold backdrop-blur-sm">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span id="ui-badge-ministry">وزارة النفط العراقية • دائرة التدريب والتطوير</span>
+                    </span>
+                    <h2 id="ui-hero-title" class="text-xl sm:text-2xl md:text-3xl font-extrabold leading-snug">
+                        الدليل الأكاديمي والعملي الشامل لمعاهد التدريب النفطي في العراق وكركوك
+                    </h2>
+                    <p id="ui-hero-desc" class="text-xs sm:text-sm md:text-base text-slate-100/90 leading-relaxed">
+                        تعرف على نظام الدراسة لمدة سنتين تقويميتين، تفاصيل المواد النظرية والعملية للكورس الأول والكورس الثاني والدور الثاني لكل قسم واختصاص، واختبر معلوماتك عبر بنك الأسئلة التفاعلي.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-2.5">
+                        <button onclick="switchMainView('departments')" class="px-4 py-2.5 rounded-xl bg-white text-primary-800 font-extrabold text-xs sm:text-sm shadow hover:bg-slate-100 transition flex items-center gap-2">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <span id="ui-btn-explore-depts">استكشف الأقسام والمواد</span>
+                        </button>
+                        <button onclick="switchMainView('exams')" class="px-4 py-2.5 rounded-xl bg-primary-600/80 border border-white/30 text-white font-bold text-xs sm:text-sm hover:bg-primary-600 transition flex items-center gap-2">
+                            <i class="fa-solid fa-check-double"></i>
+                            <span id="ui-btn-start-quiz">ابدأ الاختبارات التفاعلية</span>
+                        </button>
+                    </div>
+                </div>
+                <i class="fa-solid fa-helmet-safety text-white/10 text-9xl absolute -bottom-4 -left-4 pointer-events-none"></i>
+            </div>
+
+            <!-- إحصائيات سريعة وملخص تقدم الطالب المحفوظ -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div class="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="text-primary-600 dark:text-primary-400 text-xl font-extrabold">2 سنتان</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold mt-1">مدة الدراسة (4 كورسات)</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="text-emerald-600 dark:text-emerald-400 text-xl font-extrabold">60% / 50%</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold mt-1">درجة النجاح (تخصصي / عام)</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="text-amber-600 dark:text-amber-400 text-xl font-extrabold">4 أقسام</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold mt-1">14 اختصاصاً نفطياً دقيقاً</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div id="saved-score-badge" class="text-indigo-600 dark:text-indigo-400 text-xl font-extrabold">0%</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold mt-1">أعلى درجة اختبار محفوظة</div>
+                </div>
+            </div>
+
+            <!-- بطاقة خاصة: معهد التدريب النفطي في كركوك -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                    <div class="w-11 h-11 rounded-2xl bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">
+                            معهد التدريب النفطي في كركوك (Kirkuk Oil Training Institute)
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">
+                            أحد أعرق المعاهد النفطية في العراق والرافد الأساسي لشركة نفط الشمال وشركة مصافي الشمال
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm leading-relaxed">
+                    <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-2xl space-y-2">
+                        <h4 class="font-bold text-primary-700 dark:text-primary-400 flex items-center gap-2">
+                            <i class="fa-solid fa-building-columns"></i> الموقع والارتباط الإداري
+                        </h4>
+                        <p class="text-slate-700 dark:text-slate-300">
+                            يقع المعهد في <strong>محافظة كركوك (منطقة عرفة - قرب مقرات شركة نفط الشمال)</strong>، ويرتبط إدارياً وعلمياً بـ <strong>دائرة التدريب والتطوير في وزارة النفط العراقية</strong>. يتميز بقربه المباشر من حقول كركوك العملاقة (بابا كركر، جمبور، باي حسن، خباز) مما يوفر بيئة تدريب عملي حقيقية للطلبة.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-2xl space-y-2">
+                        <h4 class="font-bold text-primary-700 dark:text-primary-400 flex items-center gap-2">
+                            <i class="fa-solid fa-gears"></i> أبرز الاختصاصات والتدريب في كركوك
+                        </h4>
+                        <p class="text-slate-700 dark:text-slate-300">
+                            يضم معهد كركوك ورشاً ومختبرات متطورة تغطي الأقسام الأربعة: <strong>النفط (الإنتاج، الحفر)، التصفية وتقنية الغاز (التشغيل والسيطرة، المختبرات)، الميكانيك (المضخات والتوربينات، اللحام، الأنابيب، السلامة HSE)، والكهرباء (القياس والسيطرة، كهرباء المعدات)</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- بقية معاهد التدريب النفطي في العراق -->
+                <div class="pt-2">
+                    <h4 class="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase mb-2">معاهد التدريب النفطي الشقيقة في العراق:</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs font-bold border border-primary-200 dark:border-primary-800">📍 معهد التدريب النفطي / كركوك</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">📍 معهد التدريب النفطي / بغداد</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">📍 معهد التدريب النفطي / البصرة</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">📍 معهد التدريب النفطي / بيجي</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">📍 معهد التدريب النفطي / ميسان</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- نظام الدراسة والامتحانات والدرجات (السعي، النهائي، الدور الثاني) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- نظام السنتين والكورسات -->
+                <div class="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <h3 class="font-extrabold text-base text-slate-900 dark:text-white">نظام السنتين والفصلين (الكورسات)</h3>
+                    <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+                        <li><strong>المرحلة الأولى:</strong> تتكون من الكورس الأول (أساسيات هندسية وعامة وورش تأسيسية) والكورس الثاني (مدخل للاختصاص ومختبرات).</li>
+                        <li><strong>التدريب الصيفي:</strong> إلزامي لمدة (4-6 أسابيع) بعد المرحلة الأولى في الحقول والمصافي.</li>
+                        <li><strong>المرحلة الثانية:</strong> تتكون من الكورس الأول والكورس الثاني (مواد تخصصية دقيقة وتشغيل عملي متقدم).</li>
+                        <li><strong>الشهادة الممنوحة:</strong> دبلوم تقني نفطي معترف به رسمياً.</li>
+                    </ul>
+                </div>
+
+                <!-- نظام الدرجات والسعي -->
+                <div class="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="font-extrabold text-base text-slate-900 dark:text-white">نظام الدرجات واحتساب السعي</h3>
+                    <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+                        <li><strong>درجة النجاح الصغرى:</strong> <span class="text-emerald-600 dark:text-emerald-400 font-bold">60%</span> للمواد التخصصية والعملية، و<span class="text-sky-600 dark:text-sky-400 font-bold">50%</span> للمواد العامة المساندة (مثل اللغة الإنجليزية والحقوق).</li>
+                        <li><strong>المادة النظري فقط:</strong> 40% سعي الكورس (امتحانات شهرية وكوزات) + 60% امتحان نهائي.</li>
+                        <li><strong>المادة (نظري + عملي):</strong> 50% سعي (25% نظري + 25% تقارير ومختبر) + 50% نهائي (30% نظري + 20% عملي).</li>
+                        <li><strong>الورش العملية الصرفة:</strong> تقييم مستمر (50%) + امتحان عملي نهائي (50%).</li>
+                    </ul>
+                </div>
+
+                <!-- نظام الدور الثاني والعبور -->
+                <div class="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </div>
+                    <h3 class="font-extrabold text-base text-slate-900 dark:text-white">امتحانات الدور الثاني (المكملين)</h3>
+                    <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+                        <li>يحق للطالب الذي يرسب في مادة أو أكثر (ضمن الضوابط والتعليمات الوزارية) أداء <strong>امتحان الدور الثاني</strong> في شهر أيلول.</li>
+                        <li>يشمل الدور الثاني مواد <strong>الكورس الأول والكورس الثاني</strong> التي رسب بها الطالب.</li>
+                        <li><strong>آلية الامتحان:</strong> إذا كانت المادة تحتوي على جزء نظري وعملي، يُمتحن الطالب في الجزء الذي رسب فيه أو في كليهما حسب تعليمات القسم العلمي، وتُضاف درجة الدور الثاني إلى درجة السعي السنوي/الكورسي السابق.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- القسم 2: الأقسام العلمية الأربعة والاختصاصات والمناهج       -->
+        <!-- ========================================================= -->
+        <section id="view-departments" class="hidden space-y-5">
+            
+            <!-- عنوان القسم -->
+            <div class="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-sitemap text-primary-600"></i>
+                    <span>الأقسام العلمية والاختصاصات الدقيقة في معاهد النفط</span>
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+                    اختر القسم الرئيسي ثم اختر الاختصاص الفرعي لعرض جميع المواد النظرية والعملية للكورس الأول والثاني ومواد الدور الثاني بالتفصيل.
+                </p>
+
+                <!-- أزرار الأقسام الأربعة الرئيسية -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-4" id="main-dept-buttons">
+                    <!-- يتم توليدها برمجياً -->
+                </div>
+            </div>
+
+            <!-- شريط الاختصاصات الفرعية للقسم المختار -->
+            <div class="bg-white dark:bg-slate-900 p-4 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-slate-500 dark:text-slate-400">اختر الاختصاص الفرعي داخل القسم:</span>
+                    <span id="dept-badge-count" class="text-xs font-bold text-primary-600 bg-primary-50 dark:bg-primary-900/30 px-2.5 py-0.5 rounded-full"></span>
+                </div>
+                <div class="flex flex-wrap gap-2" id="sub-spec-buttons">
+                    <!-- يتم توليدها برمجياً -->
+                </div>
+            </div>
+
+            <!-- بطاقة تفاصيل الاختصاص المختار + التبويبات الأربعة -->
+            <div id="spec-detail-container" class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                <!-- رأس بطاقة الاختصاص -->
+                <div class="bg-gradient-to-l from-primary-700 to-primary-900 text-white p-5 sm:p-6">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div>
+                            <span id="spec-parent-label" class="text-xs font-bold bg-white/20 px-2.5 py-1 rounded-lg">قسم النفط</span>
+                            <h3 id="spec-title" class="text-xl sm:text-2xl font-extrabold mt-2">اختصاص الإنتاج والقياسات الحقلية</h3>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm px-3.5 py-2 rounded-2xl text-xs space-y-1">
+                            <div><i class="fa-solid fa-clock ml-1"></i> مدة الدراسة: <strong>سنتان (4 كورسات)</strong></div>
+                            <div><i class="fa-solid fa-award ml-1"></i> درجة النجاح: <strong>60% للتخصصي</strong></div>
+                        </div>
+                    </div>
+                    <p id="spec-desc" class="text-xs sm:text-sm text-slate-100 mt-3 leading-relaxed">
+                        وصف الاختصاص...
+                    </p>
+                </div>
+
+                <!-- شريط التبويبات التفصيلية (المرحلة 1، المرحلة 2، الدور الثاني، فرص التعيين) -->
+                <div class="flex overflow-x-auto no-scrollbar border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-2 gap-1.5">
+                    <button onclick="switchSpecTab('year1')" id="tab-year1" class="spec-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-primary-600 text-white shadow-sm transition">
+                        <i class="fa-solid fa-1 ml-1"></i> المرحلة الأولى (كورس 1 و 2)
+                    </button>
+                    <button onclick="switchSpecTab('year2')" id="tab-year2" class="spec-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 transition">
+                        <i class="fa-solid fa-2 ml-1"></i> المرحلة الثانية (كورس 1 و 2)
+                    </button>
+                    <button onclick="switchSpecTab('secondRound')" id="tab-secondRound" class="spec-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 transition">
+                        <i class="fa-solid fa-rotate-left ml-1"></i> مواد الدور الثاني (نظري وعملي)
+                    </button>
+                    <button onclick="switchSpecTab('career')" id="tab-career" class="spec-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 transition">
+                        <i class="fa-solid fa-briefcase ml-1"></i> فرص التعيين وطبيعة العمل
+                    </button>
+                </div>
+
+                <!-- محتوى التبويب المختار -->
+                <div id="spec-tab-content" class="p-4 sm:p-6">
+                    <!-- يتم حقنه ديناميكياً -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- القسم 3: بنك الأسئلة والامتحانات التفاعلية (Quiz Center)   -->
+        <!-- ========================================================= -->
+        <section id="view-exams" class="hidden space-y-5">
+            <div class="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-clipboard-question text-primary-600"></i>
+                            <span>بنك الأسئلة والامتحانات التفاعلية لمعاهد النفط</span>
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+                            اختر القسم ونوع الامتحان (كورس أول، كورس ثاني، أو شامل الدور الثاني) للإجابة مع التصحيح الفوري والشرح العلمي.
+                        </p>
+                    </div>
+                    <div class="bg-primary-50 dark:bg-primary-900/30 px-3.5 py-2 rounded-2xl border border-primary-200 dark:border-primary-800 text-xs font-bold text-primary-700 dark:text-primary-300">
+                        عدد الأسئلة المتاحة: <span id="total-q-counter">44</span> سؤالاً تخصصياً
+                    </div>
+                </div>
+
+                <!-- فلاتر الاختبار -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">1. اختر القسم العلمي:</label>
+                        <select id="quiz-dept-filter" onchange="renderQuizQuestions()" class="w-full rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 px-3 py-2.5 text-xs sm:text-sm font-bold">
+                            <option value="all">جميع الأقسام (امتحان شامل)</option>
+                            <option value="petroleum">قسم النفط (الإنتاج والحفر)</option>
+                            <option value="refining">قسم التصفية وتقنية الغاز</option>
+                            <option value="mechanics">قسم الميكانيك والمعدات</option>
+                            <option value="electrical">قسم الكهرباء والقياس والسيطرة</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">2. تصنيف الامتحان:</label>
+                        <select id="quiz-term-filter" onchange="renderQuizQuestions()" class="w-full rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 px-3 py-2.5 text-xs sm:text-sm font-bold">
+                            <option value="all">جميع الكورسات والدور الثاني</option>
+                            <option value="term1">امتحان الكورس الأول (أساسيات وتخصص)</option>
+                            <option value="term2">امتحان الكورس الثاني (تطبيقي وعملي)</option>
+                            <option value="secondRound">أسئلة الدور الثاني المكثفة</option>
+                        </select>
+                    </div>
+                    <div class="flex items-end gap-2">
+                        <button onclick="gradeFullExam()" class="flex-1 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm shadow transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>احسب الدرجة النهائية</span>
+                        </button>
+                        <button onclick="resetExamAnswers()" title="إعادة تعيين الإجابات" class="py-2.5 px-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 text-slate-700 dark:text-slate-200 font-bold text-xs sm:text-sm transition">
+                            <i class="fa-solid fa-rotate"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- لوحة النتيجة النهائية (تظهر عند التصحيح) -->
+                <div id="exam-result-banner" class="hidden rounded-2xl p-4 border-2 transition-all">
+                    <!-- يتم تعبئتها عند حساب النتيجة -->
+                </div>
+            </div>
+
+            <!-- قائمة الأسئلة التفاعلية -->
+            <div id="quiz-questions-list" class="space-y-4">
+                <!-- يتم توليد الأسئلة هنا -->
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- القسم 4: الأسئلة التحريرية والمقالية والمخططات الهندسية    -->
+        <!-- ========================================================= -->
+        <section id="view-essay" class="hidden space-y-5">
+            <div class="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-pen-to-square text-primary-600"></i>
+                    <span>بنك الأسئلة التحريرية (تعاريف، تعاليل، مقارنات، ومخططات)</span>
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+                    أهم الأسئلة المقالية التي تتكرر في الامتحانات النهائية وامتحانات الدور الثاني في معهد نفط كركوك وبقية المعاهد، مع الإجابة النموذجية القابلة للفتح والإغلاق.
+                </p>
+
+                <!-- أزرار تصفية الأسئلة التحريرية -->
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button onclick="filterEssays('all')" class="essay-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-primary-600 text-white">الكل</button>
+                    <button onclick="filterEssays('petroleum')" class="essay-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800">قسم النفط</button>
+                    <button onclick="filterEssays('refining')" class="essay-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800">قسم التصفية والغاز</button>
+                    <button onclick="filterEssays('mechanics')" class="essay-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800">قسم الميكانيك</button>
+                    <button onclick="filterEssays('electrical')" class="essay-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800">قسم الكهرباء والقياس</button>
+                </div>
+            </div>
+
+            <div id="essay-questions-container" class="space-y-3">
+                <!-- يتم توليد الأسئلة المقالية هنا -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-5 px-4 mt-10 no-print">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
+            <div class="font-bold text-slate-700 dark:text-slate-300">
+                بوابة معاهد التدريب النفطي في العراق وكركوك • الدليل الأكاديمي وبنك الامتحانات
+            </div>
+            <div>
+                مصمم للعمل بسلاسة على الهواتف الذكية ومنصة Glitch • جميع الحقوق التعليمية محفوظة
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- قاعدة البيانات الشاملة والمنطق التفاعلي (JavaScript)       -->
+    <!-- ========================================================= -->
+    <script>
+        // 1. قاموس الترجمة للواجهات الرئيسية (عربي، كردي سوراني، باديني، تركماني، إنجليزي)
+        const translations = {
+            ar: {
+                dir: 'rtl',
+                appTitle: 'بوابة معاهد التدريب النفطي',
+                appSubtitle: 'العراق • كركوك • الدليل الشامل والامتحانات',
+                navGuide: 'دليل الدراسة وكركوك',
+                navDepts: 'الأقسام والمواد (كورس 1 و2 ودور 2)',
+                navExams: 'بنك الأسئلة والامتحانات',
+                navEssay: 'الأسئلة التحريرية والمخططات',
+                badgeMinistry: 'وزارة النفط العراقية • دائرة التدريب والتطوير',
+                heroTitle: 'الدليل الأكاديمي والعملي الشامل لمعاهد التدريب النفطي في العراق وكركوك',
+                heroDesc: 'تعرف على نظام الدراسة لمدة سنتين تقويميتين، تفاصيل المواد النظرية والعملية للكورس الأول والكورس الثاني والدور الثاني لكل قسم واختصاص، واختبر معلوماتك عبر بنك الأسئلة التفاعلي.',
+                btnExplore: 'استكشف الأقسام والمواد',
+                btnQuiz: 'ابدأ الاختبارات التفاعلية'
+            },
+            ckb: {
+                dir: 'rtl',
+                appTitle: 'دەروازەی پەیمانگاکانی ڕاهێنانی نەوت',
+                appSubtitle: 'عێراق • کەرکوک • ڕێبەری گشتی و تاقیکردنەوەکان',
+                navGuide: 'ڕێبەری خوێندن و کەرکوک',
+                navDepts: 'بەشەکان و وانەکان (کۆرسی ١ و ٢ و خولی ٢)',
+                navExams: 'بانکی پرسیار و تاقیکردنەوە',
+                navEssay: 'پرسیارە نووسراوەکان و هێڵکاری',
+                badgeMinistry: 'وەزارەتی نەوتی عێراق • فەرمانگەی ڕاهێنان و پەرەپێدان',
+                heroTitle: 'ڕێبەری ئەکادیمی و پراکتیکی گشتگیر بۆ پەیمانگاکانی ڕاهێنانی نەوت لە عێراق و کەرکوک',
+                heroDesc: 'ئاشنابە بە سیستەمی خوێندنی دوو ساڵە، وردەکاری وانە تیۆری و پراکتیکییەکانی کۆرسی یەکەم و دووەم و خولی دووەم بۆ هەموو بەشەکان، و خۆت تاقیبکەرەوە.',
+                btnExplore: 'بەشەکان و وانەکان ببینە',
+                btnQuiz: 'دەست بە تاقیکردنەوە بکە'
+            },
+            kmr: {
+                dir: 'rtl',
+                appTitle: 'دەرگەهێ پەیمانگەهێن ڕاهێنانا پەترۆلێ',
+                appSubtitle: 'عێراق • کەرکووک • ڕێبەرێ گشتی و ئەزموون',
+                navGuide: 'ڕێبەرێ خواندنێ و کەرکووک',
+                navDepts: 'پشک و وانە (کۆرسێ ١ و ٢ و خولا ٢)',
+                navExams: 'بەнка پسیاران و ئەزموون',
+                navEssay: 'پسیارێن نڤیسکی و نەخشە',
+                badgeMinistry: 'وەزارەتا پەترۆلا عێراقێ • فەرمانگەها ڕاهێنانێ',
+                heroTitle: 'ڕێبەرێ ئەکادیمی و پراکتیکی یێ گشتگیر بۆ پەیمانگەهێن پەترۆلێ ل عێراقێ و کەرکووکێ',
+                heroDesc: 'سیستەمێ خواندنا دوو سالان، هەمی وانێن تیۆری و پراکتیکی یێن کۆرسێ ئێکێ و دووێ و خولا دووێ بۆ هەمی پشکان بزانە.',
+                btnExplore: 'پشک و وانان ببینە',
+                btnQuiz: 'دەست ب ئەزموونێ بکە'
+            },
+            tk: {
+                dir: 'ltr',
+                appTitle: 'Irak ve Kerkük Petrol Eğitim Enstitüleri Portalı',
+                appSubtitle: 'Irak • Kerkük • Kapsamlı Müfredat ve Sınavlar',
+                navGuide: 'Eğitim Rehberi & Kerkük',
+                navDepts: 'Bölümler ve Dersler (1. ve 2. Dönem)',
+                navExams: 'Soru Bankası ve Sınavlar',
+                navEssay: 'Yazılı Sorular ve Şemalar',
+                badgeMinistry: 'Irak Petrol Bakanlığı • Eğitim ve Geliştirme Dairesi',
+                heroTitle: 'Irak ve Kerkük Petrol Eğitim Enstitüleri Kapsamlı Akademik Rehberi',
+                heroDesc: '2 yıllık eğitim sistemini, tüm bölümlerin teorik ve pratik derslerini (1. dönem, 2. dönem ve bütünleme) inceleyin ve interaktif testlerle bilginizi ölçün.',
+                btnExplore: 'Bölümleri Keşfet',
+                btnQuiz: 'Sınavlara Başla'
+            },
+            en: {
+                dir: 'ltr',
+                appTitle: 'Iraq & Kirkuk Oil Training Institutes Portal',
+                appSubtitle: 'Iraq • Kirkuk • Full Curriculum & Exam Center',
+                navGuide: 'Study Guide & Kirkuk',
+                navDepts: 'Departments & Courses (Term 1, 2 & Resit)',
+                navExams: 'Interactive Quiz Bank',
+                navEssay: 'Written Questions & Diagrams',
+                badgeMinistry: 'Iraqi Ministry of Oil • Training & Development Directorate',
+                heroTitle: 'Comprehensive Academic & Practical Guide for Oil Training Institutes in Iraq & Kirkuk',
+                heroDesc: 'Explore the 2-year diploma system, detailed theoretical and practical subjects for Term 1, Term 2, and Second Round (Resit) exams across all departments.',
+                btnExplore: 'Explore Departments',
+                btnQuiz: 'Start Interactive Exams'
+            }
+        };
+
+        // 2. قاعدة البيانات الكاملة للأقسام الأربعة والاختصاصات والمواد (كورس 1، كورس 2، دور 2)
+        const departmentsData = [
+            {
+                id: 'petroleum',
+                name: 'قسم النفط',
+                icon: 'fa-oil-well',
+                color: 'sky',
+                specializations: [
+                    {
+                        id: 'production',
+                        name: 'الإنتاج والقياسات الحقلية',
+                        desc: 'يُعنى هذا الاختصاص بعمليات استخراج النفط والغاز من الآبار، وتشغيل محطات العزل (Degassing Stations)، وقياس معدلات الجريان والضغط والحرارة، وصيانة رأس البئر (شجرة الميلاد).',
+                        year1: {
+                            term1: [
+                                { name: 'أساسيات هندسة النفط والجيولوجيا', type: 'نظري + عملي', hours: 4, topics: 'نشأة النفط، الصخور المكمنية، المصائد النفطية، الخواص الفيزيائية للمكامن.' },
+                                { name: 'الرياضيات الهندسية وتطبيقاتها', type: 'نظري', hours: 3, topics: 'التفاضل والتكامل الأساسي، المعادلات الخطية، حساب الحجوم والمساحات.' },
+                                { name: 'الفيزياء والكيمياء العامة', type: 'نظري + مختبر', hours: 4, topics: 'خواص الموائع، الكثافة، اللزوجة، التفاعلات الكيميائية، قياس درجة API.' },
+                                { name: 'الرسم الهندسي وتخطيط الأنابيب', type: 'عملي (مرسم)', hours: 3, topics: 'المساقط الهندسية، رموز الصمامات والمعدات النفطية (P&ID).' },
+                                { name: 'الورش الهندسية التأسيسية', type: 'عملي (ورشة)', hours: 4, topics: 'اللحام الأساسي، البرادة، الخراطة، واستخدام العدد اليدوية والقياسية.' },
+                                { name: 'السلامة المهنية ومكافحة الحرائق', type: 'نظري + عملي', hours: 2, topics: 'مخاطر الغازات السامة (H2S)، طفايات الحريق، ومعدات الوقاية الشخصية PPE.' }
+                            ],
+                            term2: [
+                                { name: 'مبادئ إنتاج النفط والغاز', type: 'نظري + عملي', hours: 5, topics: 'طرق الإنتاج الطبيعي (الجريان الذاتي)، مكونات البئر المنتج، شجرة الميلاد.' },
+                                { name: 'ميكانيك الموائع (Fluid Mechanics)', type: 'نظري + مختبر', hours: 4, topics: 'معادلة برنولي، الجريان الطباقي والمضطرب، حسابات هبوط الضغط في الأنابيب.' },
+                                { name: 'القياسات الحقلية وأجهزة الفحص', type: 'نظري + عملي', hours: 4, topics: 'مقاييس الضغط والحرارة والمستوى، عدادات الجريان (Orifice & Turbine Meters).' },
+                                { name: 'الإنكليزية الفنية والمصطلحات النفطية', type: 'نظري', hours: 2, topics: 'قراءة الكتالوجات الفنية، كتابة التقارير اليومية للحقول النفطية.' },
+                                { name: 'تطبيقات الحاسوب الهندسية', type: 'عملي (مختبر)', hours: 2, topics: 'برامج الجداول الحسابية لمعالجة بيانات الإنتاج اليومي.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'محطات عزل الغاز (Degassing Stations)', type: 'نظري + عملي', hours: 5, topics: 'أنواع العازلات (أفقية، عمودية، كروية)، مراحل العزل، صمامات السيطرة.' },
+                                { name: 'طرق الرفع الاصطناعي (Artificial Lift)', type: 'نظري + عملي', hours: 4, topics: 'الرفع بالغاز (Gas Lift)، المضخات الغاطسة الكهربائية (ESP)، المضخات الماصة.' },
+                                { name: 'معالجة النفط الخام (Dehydration & Desalting)', type: 'نظري + مختبر', hours: 4, topics: 'كسر الاستحلاب، إزالة الماء والأملاح، وحدات التسخين (Heater Treaters).' },
+                                { name: 'الخزانات النفطية والقياس الخزاني', type: 'نظري + عملي', hours: 4, topics: 'أنواع الخزانات (ذات السقف الثابت والعائم)، جداول المعايرة، قياس المنسوب.' }
+                            ],
+                            term2: [
+                                { name: 'صيانة الآبار وإنعاشها (Workover & Stimulation)', type: 'نظري + عملي', hours: 5, topics: 'عمليات التحميض (Acidizing)، التكسير الهيدروليكي، عمليات السلك (Wireline).' },
+                                { name: 'تآكل المعدات النفطية والحماية الكاثودية', type: 'نظري + مختبر', hours: 3, topics: 'أسباب التآكل في أنابيب الإنتاج، مثبطات التآكل، الحماية الكاثودية.' },
+                                { name: 'التشغيل الموقعي والمشروع التطبيقي', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي مباشر في محطات عزل شركة نفط الشمال في كركوك.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'في امتحان الدور الثاني لاختصاص الإنتاج، يتم التركيز على المسائل الحسابية لمعدلات الجريان وهبوط الضغط، إضافة إلى الاختبار العملي في مختبر القياسات الحقلية وعلى مجسمات العازلات وشجرة الميلاد.',
+                            theoreticalSubjects: ['مبادئ إنتاج النفط والغاز', 'محطات عزل الغاز', 'طرق الرفع الاصطناعي', 'معالجة النفط الخام', 'ميكانيك الموائع'],
+                            practicalSubjects: ['فحص ومعايرة عدادات الجريان والضغط (عملي)', 'تشغيل العازلة الأفقية وتحديد أجزائها (عملي)', 'فحوصات نسبة الماء والملح BS&W في المختبر']
+                        },
+                        career: 'يعمل الخريج بصفة (فني إنتاج / مشغل محطات عزل) في شركة نفط الشمال (كركوك)، شركة نفط البصرة، شركة نفط ميسان، وفي جميع حقول الإنتاج النفطية ومحطات الكبس والضخ.'
+                    },
+                    {
+                        id: 'drilling',
+                        name: 'حفر الآبار النفطية',
+                        desc: 'يختص بتدريب الكوادر الفنية للعمل على أبراج الحفر الاستكشافية والتطويرية، وإدارة سوائل الحفر (طين الحفر)، وعمليات التسميت والسيطرة على اندفاع الآبار.',
+                        year1: {
+                            term1: [
+                                { name: 'مبادئ حفر الآبار النفطية', type: 'نظري + عملي', hours: 4, topics: 'تاريخ الحفر، الحفر الدوار (Rotary Drilling)، مكونات برج الحفر الأساسية.' },
+                                { name: 'الجيولوجيا التركيبية والنفطية', type: 'نظري + عملي', hours: 3, topics: 'الطبقات الصخرية، الضغوط الطبقية غير الاعتيادية، وصف الفتات الصخري.' },
+                                { name: 'الرياضيات والفيزياء الهندسية', type: 'نظري', hours: 4, topics: 'حسابات الحجوم الأسطوانية والحلقية، الضغوط الهيدروستاتيكية.' },
+                                { name: 'الورش الميكانيكية والسلامة', type: 'عملي (ورشة)', hours: 4, topics: 'اللحام، التوصيلات الملولبة، وإجراءات السلامة على منصة الحفر.' }
+                            ],
+                            term2: [
+                                { name: 'تكنولوجيا سوائل الحفر (طين الحفر)', type: 'نظري + مختبر', hours: 5, topics: 'وظائف طين الحفر، قياس الكثافة (Mud Balance)، اللزوجة (Marsh Funnel).' },
+                                { name: 'خيط الحفر والحافرات (Drill String & Bits)', type: 'نظري + عملي', hours: 4, topics: 'أنابيب الحفر، أنابيب التثقيل (Drill Collars)، أنواع الدقاقات (PDC & Tricone).' },
+                                { name: 'الإنكليزية الفنية والرسم الهندسي', type: 'نظري + عملي', hours: 3, topics: 'مصطلحات أبراج الحفر، قراءة مخططات البئر (Wellbore Schematics).' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'تبطين وتسميت الآبار (Casing & Cementing)', type: 'نظري + مختبر', hours: 5, topics: 'أنواع البطانات (السطحية، الوسطية، الإنتاجية)، حسابات كميات السمنت.' },
+                                { name: 'السيطرة على الآبار (Well Control & BOP)', type: 'نظري + محاكي', hours: 5, topics: 'مانعات الانفجار (BOP)، اكتشاف الرفسة (Kick)، طرق قتل البئر (Driller Method).' },
+                                { name: 'هيدروليكا الحفر', type: 'نظري', hours: 3, topics: 'حسابات المضخات الطينية، سرعة الجريان الحلقي، تنظيف قاع البئر.' }
+                            ],
+                            term2: [
+                                { name: 'الحفر الموجه والأفقي (Directional Drilling)', type: 'نظري + عملي', hours: 4, topics: 'أدوات الانحراف، محركات قاع البئر (Mud Motors)، قياسات الميل والاتجاه.' },
+                                { name: 'عمليات الاصطياد والمشاكل الحقلية (Fishing)', type: 'نظري + عملي', hours: 4, topics: 'استعصاء الأنابيب (Stuck Pipe)، معدات الاصطياد، إكمال الآبار.' },
+                                { name: 'التدريب الميداني على أبراج الحفر', type: 'عملي حقلي', hours: 6, topics: 'تطبيق ميداني مع شركة الحفر العراقية في حقول كركوك.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يركز الدور الثاني في قسم الحفر على حسابات الضغط الهيدروستاتيكي وضغط قتل البئر، بالإضافة إلى الفحص العملي في مختبر طين الحفر (فحص الكثافة واللزوجة والترشيح).',
+                            theoreticalSubjects: ['تكنولوجيا سوائل الحفر', 'تبطين وتسميت الآبار', 'السيطرة على الآبار (BOP)', 'خيط الحفر والحافرات'],
+                            practicalSubjects: ['فحوصات مختبر طين الحفر (كثافة، لزوجة، ترشيح)', 'اختبار محاكي السيطرة على الرفسة (Well Control Simulator)']
+                        },
+                        career: 'يعمل الخريج في شركة الحفر العراقية (IDC)، وشركات الحفر العالمية العاملة في العراق بصفة (فني حفر / فني سوائل حفر / مساعد حفار).'
+                    },
+                    {
+                        id: 'rig_mechanics',
+                        name: 'ميكانيك أجهزة الحفر',
+                        desc: 'يُعد كوادر متخصصة بصيانة وتشغيل المعدات الميكانيكية الثقيلة على أبراج الحفر مثل مضخات الطين العملاقة، الرافعة الرئيسية (Drawworks)، والمحركات الديزل.',
+                        year1: {
+                            term1: [
+                                { name: 'أساسيات الميكانيك الهندسي', type: 'نظري', hours: 4, topics: 'القوى والعزوم، الاحتكاك، نقل الحركة بالتروس والسيور والسلاسل.' },
+                                { name: 'الورش الميكانيكية والخراطة', type: 'عملي (ورشة)', hours: 5, topics: 'التشغيل على المخرطة، الفريزة، القياسات الدقيقة بالقدمة والمايكروميتر.' },
+                                { name: 'مكونات برج الحفر الميكانيكية', type: 'نظري + عملي', hours: 4, topics: 'نظام الرفع، نظام التدوير (Rotary Table & Top Drive)، نظام التدوير الطيني.' }
+                            ],
+                            term2: [
+                                { name: 'محركات الاحتراق الداخلي (الديزل)', type: 'نظري + عملي', hours: 5, topics: 'دورة رباعية الأشواط، منظومة حقن الوقود، التبريد والتزييت للمحركات الكبيرة.' },
+                                { name: 'الهيدروليك والنيوماتيك الصناعي', type: 'نظري + مختبر', hours: 4, topics: 'المضخات الهيدروليكية، الصمامات الاتجاهية، الأسطوانات الهوائية.' },
+                                { name: 'الرسم الميكانيكي الصناعي', type: 'عملي (مرسم)', hours: 3, topics: 'رسم المسننات، المحامل (Bearings)، التفاوتات الهندسية.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'صيانة مضخات الطين (Mud Pumps)', type: 'نظري + عملي', hours: 5, topics: 'المضخات الثلاثية (Triplex Pumps)، استبدال البطانات والمكابس والصمامات.' },
+                                { name: 'الرافعة الرئيسية ونظام المكابح', type: 'نظري + عملي', hours: 4, topics: 'الـ Drawworks، القوابض الهوائية، المكابح المساعدة الكهرومغناطيسية.' },
+                                { name: 'معدات تنقية سوائل الحفر', type: 'نظري + عملي', hours: 3, topics: 'الهزازات (Shale Shakers)، أجهزة فصل الرمل والطمى، الطاردات المركزية.' }
+                            ],
+                            term2: [
+                                { name: 'صيانة مانعات الانفجار الهيدروليكية (Koomey Unit)', type: 'نظري + عملي', hours: 5, topics: 'وحدة تراكم الضغط الهيدروليكي، فحص صمامات التحكم في الـ BOP.' },
+                                { name: 'الصيانة الوقائية وتشخيص الأعطال', type: 'نظري + عملي', hours: 4, topics: 'تحليل الاهتزازات، برامج الصيانة الدورية لأبراج الحفر.' },
+                                { name: 'التطبيق العملي في ورش الحفر', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في ورش صيانة أجهزة الحفر في كركوك.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يشمل الدور الثاني اختباراً نظرياً في منظومات نقل الحركة والهيدروليك، واختباراً عملياً في تفكيك وتجميع أجزاء مضخة الطين أو صمامات وحدة السيطرة الهيدروليكية.',
+                            theoreticalSubjects: ['صيانة مضخات الطين', 'محركات الاحتراق الداخلي', 'الهيدروليك والنيوماتيك', 'الرافعة الرئيسية والمكابح'],
+                            practicalSubjects: ['تفكيك وصيانة صمامات وبطانات مضخة الطين (عملي)', 'فحص دوائر الهيدروليك والنيوماتيك في المختبر']
+                        },
+                        career: 'يعمل الخريج بصفة (فني ميكانيك أبراج حفر) في شركة الحفر العراقية، وورش صيانة المعدات الثقيلة في الحقول النفطية.'
+                    }
+                ]
+            },
+            {
+                id: 'refining',
+                name: 'قسم التصفية وتقنية الغاز',
+                icon: 'fa-flask-vial',
+                color: 'emerald',
+                specializations: [
+                    {
+                        id: 'operations',
+                        name: 'التشغيل والسيطرة (المصافي)',
+                        desc: 'يُعنى بتشغيل الوحدات الإنتاجية داخل المصافي النفطية مثل وحدات التقطير الجوي والفراغي، التهذيب بالعامل المساعد، الهدرجة، ومتابعة غرف السيطرة.',
+                        year1: {
+                            term1: [
+                                { name: 'مبادئ الهندسة الكيميائية', type: 'نظري', hours: 4, topics: 'موازنة المادة والطاقة، الوحدات والأبعاد، العمليات الفيزيائية الأساسية.' },
+                                { name: 'الكيمياء العضوية والنفطية', type: 'نظري + مختبر', hours: 4, topics: 'الهيدروكربونات (البرافينات، الأوليفينات، العطريات)، تركيب النفط الخام.' },
+                                { name: 'الفيزياء والديناميكا الحرارية', type: 'نظري', hours: 3, topics: 'قوانين الثرموديناميك، الحرارة الكامنة والمحسوسة، البخار.' },
+                                { name: 'السلامة الصناعية في المصافي', type: 'نظري + عملي', hours: 2, topics: 'تصاريح العمل (PTW)، التعامل مع المواد القابلة للاشتعال.' }
+                            ],
+                            term2: [
+                                { name: 'انتقال الحرارة والمبادلات الحرارية', type: 'نظري + عملي', hours: 4, topics: 'التوصيل، الحمل، الإشعاع، أنواع المبادلات الحرارية (Shell & Tube).' },
+                                { name: 'انتقال الكتلة وأبراج التقطير', type: 'نظري + مختبر', hours: 5, topics: 'مبدأ التقطير التجزيئي، الصواني والحشوات، نسبة الراجع (Reflux Ratio).' },
+                                { name: 'معدات المصافي (الأفران والمضخات)', type: 'نظري + عملي', hours: 4, topics: 'الأفران الأنبوبية (Fired Heaters)، أبراج التبريد، المراجل البخارية.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'وحدات التقطير الجوي والفراغي', type: 'نظري + عملي', hours: 5, topics: 'تجزئة النفط الخام إلى نفثا، كيروسين، زيت الغاز، والنفط المختزل.' },
+                                { name: 'وحدات التحسين والتكسير بالعامل المساعد', type: 'نظري + عملي', hours: 5, topics: 'تحسين العدد الأوكتاني للبنزين (Reforming)، التكسير (FCC)، الهدرجة.' },
+                                { name: 'أنظمة السيطرة والعمليات (Process Control)', type: 'نظري + محاكي', hours: 4, topics: 'حلقات السيطرة على الحرارة والضغط والمستوى، نظام DCS.' }
+                            ],
+                            term2: [
+                                { name: 'معالجة المنتجات النفطية وإنتاج الزيوت', type: 'نظري + عملي', hours: 4, topics: 'إزالة الكبريت (HDS)، إنتاج زيوت التزييت والأسفلت.' },
+                                { name: 'التشغيل القياسي والطوارئ (Start-up & Shutdown)', type: 'نظري + محاكي', hours: 4, topics: 'إجراءات تشغيل وإطفاء الوحدات، التعامل مع انقطاع الكهرباء أو البخار.' },
+                                { name: 'التدريب الموقعي في المصافي', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في مصفى كركوك ومصفى الصمود (بيجي).' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يركز الدور الثاني في التشغيل والسيطرة على مخططات جريان الوحدات (PFD)، ظروف التشغيل (حرارة وضغط) لكل برج تقطير، والاختبار العملي على محاكي غرف السيطرة.',
+                            theoreticalSubjects: ['وحدات التقطير الجوي والفراغي', 'وحدات التحسين والهدرجة', 'انتقال الحرارة والمبادلات', 'أنظمة السيطرة والعمليات'],
+                            practicalSubjects: ['تشغيل وحدة التقطير المختبرية ومحاكاة غرفة السيطرة DCS', 'تتبع خطوط الجريان والصمامات على مجسم الوحدة']
+                        },
+                        career: 'يعمل الخريج بصفة (مشغل وحدات تصفية) في شركة مصافي الشمال (مصفى كركوك، مصفى بيجي)، مصفى الدورة، مصفى البصرة، ومصفى كربلاء.'
+                    },
+                    {
+                        id: 'gas_tech',
+                        name: 'تقنية الغاز',
+                        desc: 'يختص بعمليات معالجة الغاز الطبيعي والغاز المصاحب، فصل الغازات السائلة (LPG)، تجفيف الغاز، وتحليته من كبريتيد الهيدروجين وثاني أكسيد الكربون.',
+                        year1: {
+                            term1: [
+                                { name: 'أساسيات الغاز الطبيعي وخواصه', type: 'نظري + مختبر', hours: 4, topics: 'مكونات الغاز الطبيعي، سلوك الطور (Phase Behavior)، قانون الغازات المثالية والحقيقية.' },
+                                { name: 'مبادئ الهندسة الكيميائية والكيمياء', type: 'نظري + مختبر', hours: 4, topics: 'موازنات الكتلة، التفاعلات الكيميائية، المحاليل الأمينية.' },
+                                { name: 'الفيزياء الحرارية والموائع', type: 'نظري', hours: 4, topics: 'انضغاط الغازات، التمدد، تأثير جول-ثومسون للتبريد.' }
+                            ],
+                            term2: [
+                                { name: 'كابسات الغاز والتوربينات الغازية', type: 'نظري + عملي', hours: 5, topics: 'الكابسات الطاردة المركزية والترددية، منظومات التبريد البيني.' },
+                                { name: 'العمليات الوحدوية في صناعة الغاز', type: 'نظري + عملي', hours: 4, topics: 'الامتصاص (Absorption)، الامتزاز (Adsorption)، التبادل الحراري.' },
+                                { name: 'السلامة والتعامل مع الغازات المضغوطة', type: 'نظري + عملي', hours: 3, topics: 'مخاطر الغاز الحامضي (Sour Gas)، أنظمة الإطفاء بالغازات الخاملة.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'تحلية الغاز (Gas Sweetening)', type: 'نظري + عملي', hours: 5, topics: 'إزالة H2S و CO2 باستخدام محاليل الأمين (MEA, DEA, MDEA)، استرجاع الكبريت.' },
+                                { name: 'تجفيف الغاز (Gas Dehydration)', type: 'نظري + عملي', hours: 5, topics: 'منع تكون الهيدرات، التجفيف باستخدام ثلاثي إيثيلين غلايكول (TEG) والمناخل الجزيئية.' },
+                                { name: 'استخلاص سوائل الغاز الطبيعي (NGL & LPG)', type: 'نظري + عملي', hours: 4, topics: 'وحدات التبريد العميق (Cryogenic)، أبراج فصل البروبان والبيوتان.' }
+                            ],
+                            term2: [
+                                { name: 'نقل وخزن الغاز المسال والمضغوط', type: 'نظري + عملي', hours: 4, topics: 'الخزانات الكروية (Spheres)، شبكات أنابيب الغاز، محطات القياس والتنظيم.' },
+                                { name: 'تشغيل وحدات الغاز ومحاكاتها', type: 'عملي + محاكي', hours: 4, topics: 'معالجة مشاكل الرغوة في أبراج الأمين وتدهور كفاءة الغلايكول.' },
+                                { name: 'التدريب الميداني في معامل الغاز', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في شركة غاز الشمال في كركوك.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يركز الدور الثاني في تقنية الغاز على دوائر التحلية بالأمين والتجفيف بالغلايكول وأسباب تكون الهيدرات وكيفية منعها، مع اختبار عملي على وحدات فصل الغاز.',
+                            theoreticalSubjects: ['تحلية الغاز الطبيعي', 'تجفيف الغاز ومنع الهيدرات', 'استخلاص سوائل الغاز LPG', 'كابسات الغاز'],
+                            practicalSubjects: ['فحص تركيز محلول الأمين والغلايكول في المختبر', 'تتبع مخطط وحدة تجفيف الغاز عملياً']
+                        },
+                        career: 'يعمل الخريج بصفة (مشغل وحدات غاز) في شركة غاز الشمال (كركوك)، شركة غاز الجنوب، وشركة غاز البصرة.'
+                    },
+                    {
+                        id: 'chemical_analysis',
+                        name: 'التحليلات النفطية والكيميائية',
+                        desc: 'يُعد فنيي مختبرات متخصصين بإجراء الفحوصات الفيزيائية والكيميائية للنفط الخام والمشتقات النفطية (البنزين، زيت الغاز، الزيوت) والمياه الصناعية لضمان مطابقتها للمواصفات القياسية.',
+                        year1: {
+                            term1: [
+                                { name: 'الكيمياء التحليلية (الكمية والنوعية)', type: 'نظري + مختبر', hours: 5, topics: 'التسحيح الحجمي (Titration)، التحليل الوزني، تحضير المحاليل القياسية.' },
+                                { name: 'الكيمياء العضوية والهيدروكربونات', type: 'نظري + مختبر', hours: 4, topics: 'المجموعات الوظيفية، خواص المركبات البترولية.' },
+                                { name: 'السلامة المختبرية والتعامل مع الكيمياويات', type: 'نظري + عملي', hours: 3, topics: 'استخدام خزانات الأبخرة (Fume Hoods)، التعامل مع الأحماض والمذيبات.' }
+                            ],
+                            term2: [
+                                { name: 'فحوصات النفط الخام والمشتقات الخفيفة', type: 'نظري + مختبر', hours: 5, topics: 'الكثافة النوعية API، التقطير القياسي ASTM D86، الضغط البخاري Reid.' },
+                                { name: 'التحليل الآلي (Instrumental Analysis)', type: 'نظري + مختبر', hours: 4, topics: 'أجهزة المطياف الضوئي (Spectrophotometer)، الكروماتوغرافيا الغازية (GC).' },
+                                { name: 'المواصفات القياسية العالمية (ASTM & IP)', type: 'نظري', hours: 2, topics: 'تفسير نتائج الفحوصات ومقارنتها بالمواصفات العراقية والعالمية.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'فحوصات الوقود الثقيل وزيوت التزييت', type: 'نظري + مختبر', hours: 5, topics: 'اللزوجة الكينماتيكية، نقطة الوميض (Flash Point)، نقطة الانسكاب (Pour Point).' },
+                                { name: 'فحص نسبة الكبريت والأملاح والماء', type: 'نظري + مختبر', hours: 5, topics: 'جهاز الأشعة السينية XRF لقياس الكبريت، جهاز الطرد المركزي لـ BS&W.' },
+                                { name: 'فحوصات الأسفلت والمواد القيرية', type: 'نظري + مختبر', hours: 3, topics: 'فحص النفاذية (Penetration)، الليونة، نقطة التليين.' }
+                            ],
+                            term2: [
+                                { name: 'تحليل المياه الصناعية ومعالجتها', type: 'نظري + مختبر', hours: 4, topics: 'فحص العسرة، الأملاح الذائبة TDS، الرقم الهيدروجيني pH، الكلوريدات.' },
+                                { name: 'ضبط الجودة المختبرية (QA/QC)', type: 'نظري + عملي', hours: 3, topics: 'معايرة الأجهزة المختبرية، كتابة شهادات المطابقة للمنتجات.' },
+                                { name: 'التدريب الميداني في المختبرات المركزية', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في مختبرات شركة نفط الشمال ومصفى كركوك.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'امتحان الدور الثاني في التحليلات النفطية يتضمن جانباً نظرياً حول مبادئ الفحوصات القياسية (ASTM) وجانباً عملياً إجبارياً داخل المختبر لإجراء فحص فعلي (مثل اللزوجة أو نقطة الوميض أو التسحيح).',
+                            theoreticalSubjects: ['فحوصات النفط الخام والمشتقات', 'الكيمياء التحليلية والتحليل الآلي', 'تحليل المياه الصناعية', 'فحوصات الزيوت والأسفلت'],
+                            practicalSubjects: ['إجراء فحص اللزوجة ونقطة الوميض والتقطير عملياً في المختبر', 'تحليل عينة مياه صناعية (pH, TDS, Hardness)']
+                        },
+                        career: 'يعمل الخريج بصفة (فني مختبرات نفطية وكيميائية) في مختبرات السيطرة النوعية بالحقول النفطية والمصافي ومعامل الغاز ومحطات معالجة المياه.'
+                    }
+                ]
+            },
+            {
+                id: 'mechanics',
+                name: 'قسم الميكانيك',
+                icon: 'fa-gears',
+                color: 'amber',
+                specializations: [
+                    {
+                        id: 'pumps_turbines',
+                        name: 'المضخات والتوربينات',
+                        desc: 'يُعد كوادر فنية عالية المهارة في تشغيل وصيانة وتفكيك وتجميع المضخات الطاردة المركزية والترددية والتوربينات الغازية والبخارية في محطات الضخ والتوليد.',
+                        year1: {
+                            term1: [
+                                { name: 'الميكانيك الهندسي ومقاومة المواد', type: 'نظري', hours: 4, topics: 'الإجهاد والانفعال، العزوم، تحمل المعادن، التوازن الديناميكي.' },
+                                { name: 'الورش الميكانيكية (الخراطة والتفريز)', type: 'عملي (ورشة)', hours: 5, topics: 'استخدام المخرطة، المثقاب، أدوات القياس الدقيقة (Dial Gauge).' },
+                                { name: 'الرسم الهندسي والميكانيكي', type: 'عملي (مرسم)', hours: 3, topics: 'رسم المقاطع الميكانيكية للمضخات والصمامات والمحامل.' }
+                            ],
+                            term2: [
+                                { name: 'أساسيات المضخات والضواغط', type: 'نظري + مختبر', hours: 5, topics: 'تصنيف المضخات، منحنيات الأداء، ظاهرة التكهف (Cavitation) وطرق تجنبها.' },
+                                { name: 'الديناميكا الحرارية والموائع', type: 'نظري', hours: 4, topics: 'دورات التوربينات الغازية (Brayton Cycle) والبخارية (Rankine Cycle).' },
+                                { name: 'عناصر الماكينات (المحامل والموانع)', type: 'نظري + عملي', hours: 3, topics: 'أنواع الـ Bearings، الحشوات الميكانيكية (Mechanical Seals) والحشوات الاعتيادية.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'صيانة المضخات الطاردة المركزية والترددية', type: 'نظري + عملي', hours: 5, topics: 'تفكيك المضخة، فحص البشارة (Impeller)، استبدال Mechanical Seal، الموازنة.' },
+                                { name: 'التوربينات الغازية والبخارية', type: 'نظري + عملي', hours: 5, topics: 'مكونات التوربين (الضاغط، غرفة الاحتراق، التوربين)، منظومة التزييت والوقود.' },
+                                { name: 'الترصيف الليزري ومراقبة الاهتزازات', type: 'نظري + عملي', hours: 4, topics: 'عملية الـ Alignment بين المحرك والمضخة، قراءة وتحليل الاهتزازات.' }
+                            ],
+                            term2: [
+                                { name: 'الصمامات الصناعية ومصائد البخار', type: 'نظري + عملي', hours: 4, topics: 'صيانة الصمامات البوابية والكروية وصمامات الأمان (Safety Relief Valves).' },
+                                { name: 'الصيانة التنبؤية والوقائية', type: 'نظري', hours: 3, topics: 'جدولة الصيانة، فحص الزيوت، تشخيص الأعطال الميكانيكية.' },
+                                { name: 'التدريب العملي في محطات الضخ', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في محطات ضخ كركوك (مثل محطة K1).' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يركز الدور الثاني على ظاهرة التكهف (NPSH) ومنحنيات أداء المضخات، والاختبار العملي في ورشة المضخات لإجراء الترصيف (Alignment) وتبديل الحشوة الميكانيكية.',
+                            theoreticalSubjects: ['صيانة المضخات الطاردة المركزية', 'التوربينات الغازية والبخارية', 'عناصر الماكينات والموانع', 'الترصيف ومراقبة الاهتزازات'],
+                            practicalSubjects: ['إجراء الترصيف (Alignment) لمضخة ومحرك كهربائي (عملي)', 'تفكيك وتجميع مضخة طاردة مركزية وفحص أجزائها']
+                        },
+                        career: 'يعمل الخريج بصفة (فني صيانة مضخات وتوربينات) في محطات ضخ النفط الخام، محطات توليد الطاقة الكهربائية في الشركات النفطية، والمصافي.'
+                    },
+                    {
+                        id: 'oil_equipment_mech',
+                        name: 'ميكانيك المعدات النفطية',
+                        desc: 'يختص بصيانة المبادلات الحرارية، الأوعية الضاغطة، المراجل البخارية، أبراج التبريد، وأنظمة التكييف والتبريد الصناعي في المنشآت النفطية.',
+                        year1: {
+                            term1: [
+                                { name: 'الميكانيك الهندسي والمعادن', type: 'نظري + مختبر', hours: 4, topics: 'خواص المعادن والسبائك، المعاملات الحرارية للصلب، الفحوصات الميكانيكية.' },
+                                { name: 'الورش الميكانيكية التأسيسية', type: 'عملي (ورشة)', hours: 5, topics: 'البرادة، الخراطة، القص والثني، استخدام العدد اليدوية.' },
+                                { name: 'الرسم الهندسي والمخططات الصناعية', type: 'عملي (مرسم)', hours: 3, topics: 'رسم الأوعية الأسطوانية والمبادلات الحرارية.' }
+                            ],
+                            term2: [
+                                { name: 'المعدات الثابتة في المنشآت النفطية', type: 'نظري + عملي', hours: 5, topics: 'الأوعية الضاغطة، العازلات، أبراج التقطير وصوانيها.' },
+                                { name: 'المبادلات الحرارية وأبراج التبريد', type: 'نظري + عملي', hours: 4, topics: 'أنواع المبادلات، طرق تنظيف الأنابيب، فحص التسريب (Hydrotest).' },
+                                { name: 'التكييف والتبريد الصناعي', type: 'نظري + عملي', hours: 3, topics: 'دورة التبريد بالانضغاط، صيانة منظومات تكييف غرف السيطرة.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'صيانة المبادلات الحرارية والمراجل', type: 'نظري + عملي', hours: 5, topics: 'سحب حزمة الأنابيب (Tube Bundle)، استبدال الحشوات (Gaskets)، الفحص الهيدروستاتيكي.' },
+                                { name: 'الرافعات والمعدات الميكانيكية المساعدة', type: 'نظري + عملي', hours: 4, topics: 'الرافعات الجسرية، السلاسل والحبال الفولاذية، قواعد الرفع الآمن.' },
+                                { name: 'تآكل المعادن وطرق الحماية', type: 'نظري + مختبر', hours: 3, topics: 'البطانات الداخلية، الطلاء الصناعي، الحماية من التآكل.' }
+                            ],
+                            term2: [
+                                { name: 'صيانة الصمامات ومانعات التسرب', type: 'نظري + عملي', hours: 4, topics: 'تجليخ مقاعد الصمامات (Lapping)، فحص الصمامات تحت الضغط.' },
+                                { name: 'إدارة الصيانة المبرمجة (Turnaround)', type: 'نظري', hours: 3, topics: 'تخطيط أعمال الصيانة الشاملة للوحدات النفطية أثناء التوقف.' },
+                                { name: 'التدريب الميداني في الورش المركزية', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في الورش المركزية لشركة نفط الشمال.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يتضمن الدور الثاني اختباراً نظرياً في أجزاء المبادلات الحرارية والأوعية الضاغطة واختبارات الفحص الهيدروستاتيكي، واختباراً عملياً في صيانة الصمامات وربط الفلنجات.',
+                            theoreticalSubjects: ['صيانة المبادلات الحرارية والمراجل', 'المعدات الثابتة والأوعية الضاغطة', 'تآكل المعادن والحماية', 'الصمامات الصناعية'],
+                            practicalSubjects: ['تفكيك وصيانة صمام بوابي واختباره (عملي)', 'ربط الفلنجات بالمفتاح العزمي (Torque Wrench) وفق التسلسل الصحيح']
+                        },
+                        career: 'يعمل الخريج بصفة (فني صيانة معدات نفطية) في الورش المركزية للشركات النفطية، المصافي، ومجمعات الغاز.'
+                    },
+                    {
+                        id: 'welding',
+                        name: 'تقنيات اللحام (Welding)',
+                        desc: 'يُعد لحامين تقنيين وفاحصي لحام محترفين في لحام الأنابيب النفطية والخزانات بجميع الوضعيات (1G إلى 6G) باستخدام أحدث التقنيات والفحوصات اللاإتلافية (NDT).',
+                        year1: {
+                            term1: [
+                                { name: 'أساسيات اللحام والقطع الحراري', type: 'نظري + ورشة', hours: 6, topics: 'اللحام بالقوس الكهربائي (SMAW)، القطع بالأوكسي-أستيلين، سلامة اللحام.' },
+                                { name: 'ميتالورجيا اللحام والمعادن', type: 'نظري + مختبر', hours: 4, topics: 'تأثير الحرارة على بنية المعدن، منطقة التأثر الحراري (HAZ)، أنواع أسلاك اللحام.' },
+                                { name: 'قراءة مخططات ورموز اللحام', type: 'نظري + عملي', hours: 3, topics: 'رموز اللحام حسب المواصفة الأمريكية AWS، تحضير حافات اللحام.' }
+                            ],
+                            term2: [
+                                { name: 'اللحام بالغاز الخامل (TIG & MIG/MAG)', type: 'نظري + ورشة', hours: 6, topics: 'لحام التنجستن (GTAW) للجذور، لحام الأسلاك المستمرة (GMAW).' },
+                                { name: 'لحام الألواح بجميع الوضعيات', type: 'عملي (ورشة)', hours: 5, topics: 'الوضعيات المستوية والأفقية والعمودية وفوق الرأس (1G, 2G, 3G, 4G).' },
+                                { name: 'عيوب اللحام وطرق تجنبها', type: 'نظري', hours: 2, topics: 'المسامية، الشقوق، نقص الانصهار، الخبث المحصور.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'لحام الأنابيب النفطية (Pipe Welding)', type: 'نظري + ورشة', hours: 6, topics: 'لحام الأنابيب بوضعية 5G و 6G المائلة بزاوية 45 درجة وفق معيار API 1104.' },
+                                { name: 'الفحوصات اللاإتلافية (NDT)', type: 'نظري + مختبر', hours: 4, topics: 'الفحص البصري (VT)، السوائل النافذة (PT)، الجسيمات المغناطيسية (MT)، الأشعة (RT) والأمواج فوق الصوتية (UT).' },
+                                { name: 'اللحام بالقوس المغمور (SAW)', type: 'نظري + ورشة', hours: 3, topics: 'لحام الخزانات النفطية الكبيرة والهياكل الثقيلة.' }
+                            ],
+                            term2: [
+                                { name: 'لحام السبائك الخاصة والفولاذ المقاوم للصدأ', type: 'نظري + ورشة', hours: 5, topics: 'لحام Stainless Steel، المعالجات الحرارية بعد اللحام (PWHT).' },
+                                { name: 'تأهيل اللحامين وإجراءات اللحام (WPS/PQR)', type: 'نظري + عملي', hours: 3, topics: 'شهادات تأهيل اللحامين والفحوصات الإتلافية (الثني والشد).' },
+                                { name: 'التطبيق العملي في ورش الأنابيب والخزانات', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في مشاريع الأنابيب والخزانات في كركوك.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'امتحان الدور الثاني في قسم اللحام يعتمد بنسبة كبيرة على الاختبار العملي في الورشة (لحام عينة أنبوب وفحصها بصرياً وبالأشعة) إضافة إلى الأسئلة النظرية في رموز اللحام وعيوبه.',
+                            theoreticalSubjects: ['ميتالورجيا اللحام وعيوبه', 'الفحوصات اللاإتلافية NDT', 'تقنيات لحام الأنابيب API 1104', 'رموز ومخططات اللحام'],
+                            practicalSubjects: ['تنفيذ وصلة لحام أنبوب بوضعية 5G/6G باستخدام TIG + SMAW', 'إجراء فحص السوائل النافذة PT والجسيمات المغناطيسية MT']
+                        },
+                        career: 'يعمل الخريج بصفة (فني لحام أنابيب وخزانات / فاحص لحام) في شركة المشاريع النفطية (SCOP)، شركة خطوط الأنابيب، والورش الهندسية الكبرى.'
+                    },
+                    {
+                        id: 'pipelines',
+                        name: 'خطوط الأنابيب',
+                        desc: 'يختص بمد وصيانة وتشغيل شبكات خطوط أنابيب نقل النفط الخام والمنتجات النفطية والغاز، والسيطرة على التآكل وعمليات الكشط الذكي (Pigging).',
+                        year1: {
+                            term1: [
+                                { name: 'مبادئ هندسة الأنابيب والموائع', type: 'نظري', hours: 4, topics: 'تصنيف الأنابيب، حسابات السماكة والضغط التشغيلي، الاحتكاك.' },
+                                { name: 'المساحة الهندسية وتخطيط المسارات', type: 'نظري + عملي', hours: 4, topics: 'استخدام أجهزة المساحة (Level & Total Station) لتحديد مسار الأنبوب.' },
+                                { name: 'الورش الميكانيكية والرسم الهندسي', type: 'عملي', hours: 4, topics: 'رسم مقاطع الأنابيب، التفريعات، الوصلات والفلنجات.' }
+                            ],
+                            term2: [
+                                { name: 'معدات وملحقات خطوط الأنابيب', type: 'نظري + عملي', hours: 5, topics: 'الصمامات الرئيسية، الوصلات العازلة، حواجز التمدد، المصافي (Strainers).' },
+                                { name: 'تغليف وعزل الأنابيب', type: 'نظري + عملي', hours: 4, topics: 'أنواع الطلاء العازل (3LPE, FBE)، فحص العزل بجهاز (Holiday Detector).' },
+                                { name: 'اللحام الأساسي لخطوط الأنابيب', type: 'عملي (ورشة)', hours: 3, topics: 'تجميع ومحاذاة الأنابيب (Fit-up) باستخدام المشابك.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'عمليات مد ودفن واختبار الأنابيب', type: 'نظري + عملي', hours: 5, topics: 'حفر الخنادق، إنزال الأنابيب، الفحص الهيدروستاتيكي (Hydrotesting).' },
+                                { name: 'الحماية الكاثودية لخطوط الأنابيب', type: 'نظري + مختبر', hours: 4, topics: 'الأقطاب المضحية، التيار القسري، قياس جهد الأنبوب مع التربة.' },
+                                { name: 'عمليات التنظيف والفحص بالكاشطات (Pigging)', type: 'نظري + عملي', hours: 4, topics: 'محطات الإرسال والاستقبال (Pig Launchers & Receivers)، الكاشطات الذكية.' }
+                            ],
+                            term2: [
+                                { name: 'صيانة الأنابيب تحت الضغط (Hot Tapping)', type: 'نظري + عملي', hours: 4, topics: 'التثقيب الساخن، إصلاح النضوحات باستخدام الأكمام (Sleeves).' },
+                                { name: 'أنظمة مراقبة التسرب (SCADA & Leak Detection)', type: 'نظري', hours: 3, topics: 'مراقبة الضغوط والتدفقات على طول الخط الناقل.' },
+                                { name: 'التدريب الميداني في شركة خطوط الأنابيب', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي على خطوط النقل الاستراتيجية في كركوك.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يركز الدور الثاني في خطوط الأنابيب على حسابات الفحص الهيدروستاتيكي، منظومات الحماية الكاثودية، وإجراءات إرسال واستقبال الكاشطات (Pigging).',
+                            theoreticalSubjects: ['مد واختبار خطوط الأنابيب', 'الحماية الكاثودية والعزل', 'عمليات التنظيف بالكاشطات Pigging', 'صيانة الأنابيب تحت الضغط'],
+                            practicalSubjects: ['قياس جهد الحماية الكاثودية وفحص العزل بجهاز Holiday Detector', 'تطبيق إجراءات تشغيل محطة إطلاق الكاشطات']
+                        },
+                        career: 'يعمل الخريج بصفة (فني خطوط أنابيب) في شركة خطوط الأنابيب النفطية، شركة المشاريع النفطية، وأقسام الصيانة الحقلية.'
+                    },
+                    {
+                        id: 'hse',
+                        name: 'الصحة والسلامة والبيئة (HSE)',
+                        desc: 'يُعد مفتشي سلامة مهنية ومكافحة حرائق وحماية بيئة متخصصين بالعمل في المنشآت النفطية لتطبيق معايير السلامة العالمية ومنع الحوادث.',
+                        year1: {
+                            term1: [
+                                { name: 'مبادئ السلامة والصحة المهنية', type: 'نظري', hours: 4, topics: 'تحليل المخاطر (JSA/HIRA)، معدات الوقاية الشخصية PPE، الحوادث المهنية.' },
+                                { name: 'كيمياء الاحتراق ومكافحة الحرائق', type: 'نظري + عملي', hours: 5, topics: 'مثلث الحريق، أصناف الحرائق (A, B, C, D)، أنواع الطفايات والرغوة.' },
+                                { name: 'الإسعافات الأولية والإنقاذ', type: 'نظري + عملي', hours: 3, topics: 'الإنعاش القلبي الرئوي (CPR)، التعامل مع الحروق والكسور والاختناق.' }
+                            ],
+                            term2: [
+                                { name: 'مخاطر الغازات السامة والخانقة (H2S)', type: 'نظري + عملي', hours: 5, topics: 'أجهزة كشف الغازات المحمولة والثابتة، أجهزة التنفس الذاتي (SCBA).' },
+                                { name: 'نظام تصاريح العمل (Permit to Work - PTW)', type: 'نظري + عملي', hours: 4, topics: 'تصاريح العمل الساخن، البارد، الدخول للأماكن المغلقة، العمل على المرتفعات.' },
+                                { name: 'السلامة الكهربائية والميكانيكية (LOTO)', type: 'نظري + عملي', hours: 3, topics: 'نظام العزل والإغلاق (Lockout/Tagout)، سلامة الرافعات.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'هندسة الإطفاء وأنظمة الإنذار الثابتة', type: 'نظري + عملي', hours: 5, topics: 'مضخات الحريق، شبكات الرشاشات، أنظمة الإطفاء بالرغوة للخزانات النفطية.' },
+                                { name: 'حماية البيئة في الصناعة النفطية', type: 'نظري + مختبر', hours: 4, topics: 'معالجة الانسكابات النفطية، إدارة النفايات الصناعية، تلوث الهواء والماء.' },
+                                { name: 'التشريعات والمعايير الدولية (OSHA & ISO 45001)', type: 'نظري', hours: 3, topics: 'قوانين السلامة العراقية والمعايير الدولية في الشركات النفطية.' }
+                            ],
+                            term2: [
+                                { name: 'إدارة الطوارئ وخطط الإخلاء', type: 'نظري + عملي', hours: 4, topics: 'تشكيل فرق الطوارئ، نقاط التجمع، التحقيق في الحوادث وتحليل الأسباب الجذرية.' },
+                                { name: 'التفتيش الميداني وكتابة تقارير السلامة', type: 'عملي + محاكي', hours: 4, topics: 'جولات التفتيش اليومية في الحقول والمصافي.' },
+                                { name: 'التدريب الميداني في أقسام السلامة والإطفاء', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في مراكز إطفاء وسلامة شركة نفط الشمال في كركوك.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يركز الدور الثاني في HSE على نظام تصاريح العمل، التعامل مع غاز H2S، والاختبار العملي في ارتداء جهاز التنفس SCBA وتشغيل مضخات وطفايات الحريق.',
+                            theoreticalSubjects: ['نظام تصاريح العمل والعزل LOTO', 'مخاطر الغازات السامة H2S', 'هندسة الإطفاء والأنظمة الثابتة', 'حماية البيئة وإدارة الطوارئ'],
+                            practicalSubjects: ['ارتداء وفحص جهاز التنفس SCBA خلال الوقت القياسي', 'فحص الغازات وممارسة إطفاء حريق سائل مشتعل عملياً']
+                        },
+                        career: 'يعمل الخريج بصفة (مفتش سلامة مهنية / رجل إطفاء صناعي / مراقب بيئة) في جميع الشركات النفطية والحقول والمصافي ومشاريع الحفر.'
+                    },
+                    {
+                        id: 'heavy_machinery',
+                        name: 'المكائن والمعدات الثقيلة',
+                        desc: 'يُعنى بصيانة وتشغيل الآليات الهندسية الثقيلة المستخدمة في المشاريع النفطية (الرافعات المتحركة، البلدوزرات، الحفارات، والمولدات الديزل الكبيرة).',
+                        year1: {
+                            term1: [
+                                { name: 'أساسيات المحركات والأنظمة الميكانيكية', type: 'نظري + عملي', hours: 5, topics: 'محركات الديزل والبنزين، أنظمة نقل الحركة (Gearbox)، المحاور.' },
+                                { name: 'الورش الميكانيكية والحدادة', type: 'عملي (ورشة)', hours: 4, topics: 'استخدام العدد، اللحام الأساسي، صيانة الإطارات والسلاسل المعدنية.' },
+                                { name: 'كهرباء وإلكترونيات المركبات الثقيلة', type: 'نظري + مختبر', hours: 4, topics: 'البطاريات، بادئ التشغيل (Starter)، المولد (Alternator)، الحساسات.' }
+                            ],
+                            term2: [
+                                { name: 'الأنظمة الهيدروليكية للمعدات الثقيلة', type: 'نظري + مختبر', hours: 5, topics: 'المضخات الهيدروليكية ذات الإزاحة المتغيرة، صمامات التحكم، الأسطوانات.' },
+                                { name: 'أنظمة التوجيه والمكابح الهوائية', type: 'نظري + عملي', hours: 4, topics: 'المكابح الهوائية (Air Brakes)، نظام التوجيه الهيدروليكي.' },
+                                { name: 'قراءة المخططات الهيدروليكية والكهربائية', type: 'عملي', hours: 3, topics: 'تتبع الأعطال في كتالوجات الشركات المصنعة (CAT, Komatsu).' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'صيانة محركات الديزل التوربينية الحديثة', type: 'نظري + عملي', hours: 5, topics: 'نظام الحقن الإلكتروني (Common Rail)، الشاحن التوربيني (Turbocharger).' },
+                                { name: 'صيانة الرافعات والآليات الهندسية', type: 'نظري + عملي', hours: 5, topics: 'الرافعات الهيدروليكية (Cranes)، الحفارات، البلدوزرات، حسابات الأحمال.' },
+                                { name: 'المولدات الكهربائية الاحتياطية الكبيرة', type: 'نظري + عملي', hours: 3, topics: 'صيانة وتنظيم سرعة مولدات الديزل في المواقع النفطية.' }
+                            ],
+                            term2: [
+                                { name: 'تشخيص الأعطال بالكمبيوتر (Diagnostic Tools)', type: 'عملي (مختبر)', hours: 4, topics: 'استخدام أجهزة الفحص الإلكتروني لقراءة رموز الأعطال.' },
+                                { name: 'الصيانة الدورية والزيوت والشحوم', type: 'نظري + عملي', hours: 3, topics: 'اختيار زيوت المحركات والهيدروليك والفلاتر.' },
+                                { name: 'التدريب الميداني في ورش الآليات الثقيلة', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في قسم الآليات والمعدات الثقيلة في كركوك.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يشمل الدور الثاني اختباراً نظرياً في الدوائر الهيدروليكية ومحركات الديزل التوربينية، واختباراً عملياً في فحص منظومة الحقن أو الدائرة الهيدروليكية للآلية.',
+                            theoreticalSubjects: ['الأنظمة الهيدروليكية للمعدات الثقيلة', 'صيانة محركات الديزل التوربينية', 'صيانة الرافعات والآليات', 'كهرباء المعدات الثقيلة'],
+                            practicalSubjects: ['فحص ضغط الدائرة الهيدروليكية وتشخيص الأعطال عملياً', 'معايرة وصيانة أجزاء محرك الديزل في الورشة']
+                        },
+                        career: 'يعمل الخريج بصفة (فني صيانة معدات ثقيلة وآليات) في أقسام النقل والآليات والمشاريع في الشركات النفطية.'
+                    }
+                ]
+            },
+            {
+                id: 'electrical',
+                name: 'قسم الكهرباء',
+                icon: 'fa-bolt',
+                color: 'indigo',
+                specializations: [
+                    {
+                        id: 'instrumentation',
+                        name: 'القياس والسيطرة (الأجهزة الدقيقة)',
+                        desc: 'يُعد عصب التشغيل الحديث في المنشآت النفطية؛ يختص بمعايرة وصيانة مرسلات الضغط والحرارة والتدفق والمستوى، وصمامات السيطرة، وأنظمة التحكم المبرمجة PLC و DCS.',
+                        year1: {
+                            term1: [
+                                { name: 'أساسيات الهندسة الكهربائية', type: 'نظري + مختبر', hours: 5, topics: 'قانون أوم وكيرشوف، دوائر التيار المستمر والمتناوب، القدرة الكهربائية.' },
+                                { name: 'الإلكترونيات التماثلية والرقمية', type: 'نظري + مختبر', hours: 5, topics: 'الدايود، الترانزستور، مكبرات العمليات، البوابات المنطقية.' },
+                                { name: 'الرياضيات والفيزياء التطبيقية', type: 'نظري', hours: 3, topics: 'الأعداد المركبة، التحويلات القياسية، خواص الكهرباء والمغناطيسية.' }
+                            ],
+                            term2: [
+                                { name: 'مبادئ القياس والحساسات (Sensors)', type: 'نظري + مختبر', hours: 5, topics: 'قياس الحرارة (RTD, Thermocouple)، قياس الضغط (Bourdon, Strain Gauge).' },
+                                { name: 'المرسلات الصناعية (Transmitters)', type: 'نظري + مختبر', hours: 4, topics: 'إشارة السيطرة القياسية (4-20 mA)، مرسلات الضغط التفاضلي (DP Transmitters).' },
+                                { name: 'الرسم الكهربائي ومخططات السيطرة (P&ID)', type: 'عملي (مرسم)', hours: 3, topics: 'رموز أجهزة القياس وفق معيار ISA، مخططات التوصيل (Loop Diagrams).' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'صمامات السيطرة والمشغلات (Control Valves)', type: 'نظري + عملي', hours: 5, topics: 'المشغلات الهوائية والكهربائية، محدد الموضع (Positioner)، صيانة الصمام.' },
+                                { name: 'أنظمة التحكم المنطقي المبرمج (PLC)', type: 'نظري + مختبر', hours: 5, topics: 'برمجة الـ Ladder Diagram، وحدات الإدخال والإخراج، الحساسات الصناعية.' },
+                                { name: 'نظم السيطرة الموزعة (DCS) وأنظمة الحماية (ESD)', type: 'نظري + محاكي', hours: 4, topics: 'مراقبة العمليات، أنظمة الإيقاف الاضطراري للمنشآت النفطية.' }
+                            ],
+                            term2: [
+                                { name: 'المعايرة الصناعية وبروتوكول HART', type: 'نظري + مختبر', hours: 5, topics: 'استخدام جهاز المعاير الميداني (HART Communicator)، ضبط الصفر والمدى (Zero & Span).' },
+                                { name: 'أجهزة كشف الغازات واللهب في المواقع الخطرة', type: 'نظري + عملي', hours: 3, topics: 'الحماية من الانفجار (Intrinsic Safety & Explosion Proof).' },
+                                { name: 'التدريب الميداني في ورش الأجهزة الدقيقة', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في قسم القياس والسيطرة بشركة نفط الشمال.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يركز الدور الثاني في القياس والسيطرة على حسابات إشارة (4-20 mA)، رموز P&ID، والاختبار العملي في معايرة مرسلة ضغط باستخدام جهاز HART وضبط صمام سيطرة.',
+                            theoreticalSubjects: ['مبادئ القياس والمرسلات الصناعية', 'صمامات السيطرة والمشغلات', 'أنظمة التحكم المبرمج PLC و DCS', 'رموز ومخططات P&ID'],
+                            practicalSubjects: ['معايرة مرسلة ضغط تفاضلي وضبط Zero/Span عملياً', 'كتابة وتنفيذ برنامج تحكم بسيط على جهاز PLC في المختبر']
+                        },
+                        career: 'يعمل الخريج بصفة (فني أجهزة دقيقة وقياس وسيطرة) في غرف السيطرة ومحطات العزل والمصافي ومعامل الغاز، وهو من أكثر الاختصاصات طلباً.'
+                    },
+                    {
+                        id: 'oil_electrical',
+                        name: 'كهرباء المعدات النفطية',
+                        desc: 'يُعد كوادر متخصصة في تشغيل وصيانة المحركات الكهربائية الضخمة، المحولات، قواطع الدورة، شبكات التوزيع ذات الضغط العالي والواطئ، والحماية الكهربائية في الحقول.',
+                        year1: {
+                            term1: [
+                                { name: 'الدوائر الكهربائية (DC & AC Circuits)', type: 'نظري + مختبر', hours: 5, topics: 'تحليل الدوائر، التوصيل النجمي والمثلثي (Star/Delta)، معامل القدرة.' },
+                                { name: 'القياسات الكهربائية والأجهزة المختبرية', type: 'نظري + مختبر', hours: 4, topics: 'استخدام الأفوميتر، الكلامب ميتر، الأوسيلوسكوب، جهاز فحص العزل (Megger).' },
+                                { name: 'الورش الكهربائية والتأسيسات الصناعية', type: 'عملي (ورشة)', hours: 4, topics: 'تمديد القابلوات المسلحة، ربط لوحات التوزيع، التأريض (Earthing).' }
+                            ],
+                            term2: [
+                                { name: 'المكائن الكهربائية (المحركات والمولدات)', type: 'نظري + مختبر', hours: 5, topics: 'المحركات الحثية ثلاثية الطور، المولدات المتزامنة، طرق بدء الحركة.' },
+                                { name: 'المحولات الكهربائية (Transformers)', type: 'نظري + مختبر', hours: 4, topics: 'مبدأ عمل المحولة، فحوصات زيت المحولة، التبريد، الربط على التوازي.' },
+                                { name: 'دوائر السيطرة الكهربائية الكلاسيكية', type: 'عملي (مختبر)', hours: 4, topics: 'الكونتاكتورات، الريليات الحرارية، دوائر تشغيل وعكس اتجاه المحركات.' }
+                            ]
+                        },
+                        year2: {
+                            term1: [
+                                { name: 'معدات المناطق الخطرة (Hazardous Areas)', type: 'نظري + عملي', hours: 4, topics: 'تصنيف المناطق (Zone 0, 1, 2)، المعدات المقاومة للانفجار (Ex-proof).' },
+                                { name: 'شبكات التوزيع ومحطات التحويل (Substations)', type: 'نظري + عملي', hours: 5, topics: 'قواطع الدورة (CB)، العوازل، المغذيات، قراءة مخططات المحطات (Single Line Diagram).' },
+                                { name: 'منظومات الحماية الكهربائية (Protection)', type: 'نظري + مختبر', hours: 4, topics: 'حماية زيادة التيار، التسرب الأرضي، مرحلات الحماية الرقمية.' }
+                            ],
+                            term2: [
+                                { name: 'صيانة المحركات الغاطسة (ESP) ومغيرات السرعة (VSD)', type: 'نظري + عملي', hours: 5, topics: 'تشغيل وصيانة محركات المضخات النفطية ومغيرات التردد.' },
+                                { name: 'منظومات الطاقة المستمرة (UPS & Batteries)', type: 'نظري + عملي', hours: 3, topics: 'صيانة البطاريات الصناعية والشواحن الخاصة بغرف السيطرة.' },
+                                { name: 'التدريب الميداني في محطات الكهرباء النفطية', type: 'عملي حقلي', hours: 6, topics: 'تدريب عملي في قسم الكهرباء بشركة نفط الشمال في كركوك.' }
+                            ]
+                        },
+                        secondRound: {
+                            rules: 'يركز الدور الثاني في كهرباء المعدات النفطية على حسابات القدرة والمحولات، دوائر السيطرة على المحركات (Star/Delta)، والاختبار العملي في فحص عزل المحركات وتوصيل لوحة سيطرة.',
+                            theoreticalSubjects: ['المكائن والمحولات الكهربائية', 'شبكات التوزيع ومحطات التحويل', 'الحماية الكهربائية والمناطق الخطرة', 'مغيرات السرعة VSD'],
+                            practicalSubjects: ['ربط وتشغيل دائرة (Star-Delta) لمحرك ثلاثي الطور في المختبر', 'فحص عزل الملفات بجهاز Megger وفحص التتابع الطوري']
+                        },
+                        career: 'يعمل الخريج بصفة (فني كهرباء معدات نفطية) في محطات التوليد والتحويل الكهربائية التابعة لوزارة النفط، محطات الضخ، وأبراج الحفر.'
+                    }
+                ]
+            }
+        ];
+
+        // 3. بنك الأسئلة التفاعلي (أكثر من 40 سؤالاً تغطي كافة الأقسام والكورسات والدور الثاني)
+        const quizDatabase = [
+            // --- قسم النفط (Petroleum) ---
+            {
+                id: 1, dept: 'petroleum', term: 'term1',
+                q: 'ما هي الوظيفة الرئيسية لصمامات شجرة الميلاد (Christmas Tree) المثبتة على رأس البئر النفطي؟',
+                options: ['حفر الطبقات الصخرية العميقة', 'التحكم في تدفق النفط والغاز وضغط رأس البئر وإغلاقه عند الطوارئ', 'توليد الطاقة الكهربائية للموقع', 'تكرير النفط الخام إلى بنزين'],
+                ans: 1,
+                exp: 'شجرة الميلاد هي مجموعة من الصمامات والتوصيلات تُركب فوق رأس البئر بعد إكماله للتحكم بمعدل الإنتاج والضغط وعزل البئر عند الصيانة أو الطوارئ.'
+            },
+            {
+                id: 2, dept: 'petroleum', term: 'term1',
+                q: 'إذا كانت كثافة النفط النوعية مرتفعة جداً، فماذا يحدث لقيمة درجة (API Gravity) لهذا النفط؟',
+                options: ['تزداد قيمة API ويصبح النفط خفيفاً', 'تنخفض قيمة API ويصبح النفط ثقيلاً', 'تبقى ثابتة عند 50 دائماً', 'لا علاقة بين الكثافة ودرجة API'],
+                ans: 1,
+                exp: 'العلاقة عكسية بين الكثافة النوعية (SG) ودرجة API حسب المعادلة: API = (141.5 / SG) - 131.5، لذا النفط الثقيل ذو الكثافة العالية يمتلك API منخفضاً.'
+            },
+            {
+                id: 3, dept: 'petroleum', term: 'term2',
+                q: 'ما هي الوظيفة الأساسية لطين الحفر (Drilling Mud) في السيطرة على البئر؟',
+                options: ['تزييت محركات الديزل', 'توليد ضغط هيدروستاتيكي يعادل أو يفوق ضغط الطبقات لمنع اندفاع المواقع', 'زيادة درجة حرارة الدقاقة', 'لحام أنابيب التبطين'],
+                ans: 1,
+                exp: 'الضغط الهيدروستاتيكي لعمود طين الحفر يمثل خط الدفاع الأول لمنع دخول موائع الطبقة (الرفسة Kick) إلى جوف البئر.'
+            },
+            {
+                id: 4, dept: 'petroleum', term: 'term2',
+                q: 'أي جهاز يُستخدم في مختبر سوائل الحفر لقياس لزوجة طين الحفر في الحقل بشكل سريع؟',
+                options: ['قمع مارش (Marsh Funnel)', 'ميزان الطين (Mud Balance)', 'مقياس الثقل النوعي Hydrometer', 'جهاز نقطة الوميض'],
+                ans: 0,
+                exp: 'قمع مارش (Marsh Funnel) يقيس اللزوجة الظاهرية لطين الحفر بالثواني، بينما يقيس Mud Balance الكثافة.'
+            },
+            {
+                id: 5, dept: 'petroleum', term: 'secondRound',
+                q: 'في محطات عزل الغاز (Degassing Stations)، ما هو الغرض من وجود صمام الأمان (PSV) أعلى العازلة؟',
+                options: ['قياس كمية النفط المنتجة', 'تنفيس الضغط الزائد تلقائياً لحماية العازلة من الانفجار', 'خلط الماء مع النفط', 'تبريد الغاز الخارج'],
+                ans: 1,
+                exp: 'صمام الأمان (Pressure Safety Valve) يفتح تلقائياً عند تجاوز الضغط الحد التصميمي المسموح به لحماية الوعاء الضاغط.'
+            },
+            {
+                id: 6, dept: 'petroleum', term: 'secondRound',
+                q: 'احسب الضغط الهيدروستاتيكي (بالـ psi) لعمود طين حفر بكثافة 10 ppg وعمق عمودي 5000 ft (المعامل الثابت 0.052):',
+                options: ['2600 psi', '500 psi', '1000 psi', '5200 psi'],
+                ans: 0,
+                exp: 'الحل: الضغط الهيدروستاتيكي = 0.052 × الكثافة (10) × العمق (5000) = 2600 psi.'
+            },
+            {
+                id: 7, dept: 'petroleum', term: 'term1',
+                q: 'أي نوع من الصخور يُعد الأكثر شيوعاً كمكمن (Reservoir Rock) لتجمع النفط والغاز في حقول كركوك؟',
+                options: ['الصخور النارية (الجرانيت)', 'الصخور الرسوبية المسامية والنفاذة (الحجر الجيري والرملي)', 'الصخور المتحولة الصماء', 'الطبقات الملحية غير النفاذة'],
+                ans: 1,
+                exp: 'تتجمع الهيدروكربونات في الصخور الرسوبية التي تمتلك مسامية (Porosity) للخزن ونفاذية (Permeability) تسمح بحركة الموائع.'
+            },
+            {
+                id: 8, dept: 'petroleum', term: 'term2',
+                q: 'ما هي طريقة الرفع الاصطناعي التي تعتمد على حقن غاز عالي الضغط داخل أنبوب الإنتاج لتقليل كثافة عمود النفط؟',
+                options: ['المضخات الماصة (Sucker Rod)', 'الرفع بالغاز (Gas Lift)', 'المضخات الغاطسة (ESP)', 'التكسير الهيدروليكي'],
+                ans: 1,
+                exp: 'الرفع بالغاز (Gas Lift) يقلل كثافة عمود السائل داخل البئر مما يقلل الضغط الهيدروستاتيكي ويسمح للنفط بالصعود إلى السطح.'
+            },
+            {
+                id: 9, dept: 'petroleum', term: 'secondRound',
+                q: 'ما هو الغرض الرئيسي من عملية تبطين البئر (Casing) وتسميته (Cementing)؟',
+                options: ['تسهيل حركة سيارات الحقل', 'منع انهيار جدران البئر وعزل الطبقات المائية عن الطبقات النفطية', 'زيادة سرعة الرياح حول البرج', 'تبريد مضخات الطين'],
+                ans: 1,
+                exp: 'التبطين والتسميت يحمي البئر من الانهيار ويمنع اختلاط موائع الطبقات المختلفة وتلوث المياه الجوفية.'
+            },
+            {
+                id: 10, dept: 'petroleum', term: 'term2',
+                q: 'ماذا تعني اختصاراً نسبة (BS&W) في فحوصات النفط الخام قبل التصدير؟',
+                options: ['الرواسب الأساسية والماء (Basic Sediment and Water)', 'نسبة الكبريت والغاز', 'درجة غليان النفط', 'ضغط البئر الساكن'],
+                ans: 0,
+                exp: 'BS&W تعبر عن نسبة الماء والرواسب الصلبة العالقة في النفط الخام، ويجب أن لا تتجاوز نسبة ضئيلة جداً (عادة أقل من 0.5%) للتصدير.'
+            },
+            {
+                id: 11, dept: 'petroleum', term: 'secondRound',
+                q: 'أي جزء في مضخة الطين الثلاثية (Triplex Mud Pump) يمتص نبضات وتذبذب الضغط في خط الدفع؟',
+                options: ['مخمد النبضات (Pulsation Dampener)', 'الهزاز (Shale Shaker)', 'رأس الدقاقة', 'خزان الوقود'],
+                ans: 0,
+                exp: 'مخمد النبضات (Pulsation Dampener) مملوء بغاز النيتروجين المضغوط لامتصاص التذبذبات الناتجة عن حركة المكابس الترددية.'
+            },
+
+            // --- قسم التصفية وتقنية الغاز (Refining & Gas) ---
+            {
+                id: 12, dept: 'refining', term: 'term1',
+                q: 'على أي خاصية فيزيائية تعتمد عملية التقطير التجزيئي (Fractional Distillation) للنفط الخام في المصافي؟',
+                options: ['الاختلاف في درجات الغليان للمشتقات الهيدروكربونية', 'الاختلاف في اللون فقط', 'الاختلاف في التوصيل الكهربائي', 'الاختلاف في الصلادة'],
+                ans: 0,
+                exp: 'يتم فصل النفط الخام إلى مشتقاته (نفثا، كيروسين، زيت الغاز، زيت الوقود) اعتماداً على تفاوت درجات غليان كل مركب.'
+            },
+            {
+                id: 13, dept: 'refining', term: 'term1',
+                q: 'لماذا يتم إجراء عملية التقطير الفراغي (Vacuum Distillation) للنفط الخام المختزل (RCR)؟',
+                options: ['لزيادة درجة غليان المشتقات', 'لخفض درجة غليان المشتقات الثقيلة ومنع تفحمها وتكسرها الحراري', 'لإضافة الماء إلى النفط', 'لإزالة اللون الأسود فقط'],
+                ans: 1,
+                exp: 'خفض الضغط داخل البرج الفراغي يخفض درجة غليان المشتقات الثقيلة فتتبخر دون الوصول لدرجات حرارة تسبب تفحمها.'
+            },
+            {
+                id: 14, dept: 'refining', term: 'term2',
+                q: 'ما هو المحلول الكيميائي الأكثر استخداماً في وحدات تجفيف الغاز الطبيعي لإزالة بخار الماء ومنع تكون الهيدرات؟',
+                options: ['ثلاثي إيثيلين غلايكول (TEG)', 'حامض الكبريتيك المركز', 'هيدروكسيد الصوديوم', 'البنزين المحسن'],
+                ans: 0,
+                exp: 'محلول TEG يمتلك شرهاً عالياً لامتصاص بخار الماء من الغاز الطبيعي ويمكن إعادة تنشيطه بالتسخين بسهولة.'
+            },
+            {
+                id: 15, dept: 'refining', term: 'term2',
+                q: 'ما هي الغازات الحامضية التي يتم إزالتها في وحدة تحلية الغاز (Gas Sweetening) باستخدام محاليل الأمين؟',
+                options: ['الأوكسجين والنيتروجين', 'كبريتيد الهيدروجين (H2S) وثاني أكسيد الكربون (CO2)', 'الميثان والإيثان', 'الهيليوم والأرغون'],
+                ans: 1,
+                exp: 'غاز H2S سام جداً ومسبب للتآكل، وغاز CO2 يسبب التآكل ويقلل القيمة الحرارية للغاز، لذا يُزالان بمحاليل الأمين.'
+            },
+            {
+                id: 16, dept: 'refining', term: 'secondRound',
+                q: 'ماذا يقيس فحص (نقطة الوميض - Flash Point) للمشتقات النفطية في المختبر؟',
+                options: ['أدنى درجة حرارة تتبخر عندها المادة وتشتعل لحظياً بوجود شرارة (مؤشر السلامة)', 'درجة تجمد الوقود في الشتاء', 'نسبة الكبريت في البنزين', 'لون المشتق النفطي'],
+                ans: 0,
+                exp: 'نقطة الوميض تحدد خطورة الاشتعال للمشتق النفطي أثناء الخزن والنقل، وهي أساسية في فحص الكيروسين وزيت الغاز والزيوت.'
+            },
+            {
+                id: 17, dept: 'refining', term: 'secondRound',
+                q: 'ما هو الغرض من وحدة التهذيب بالعامل المساعد (Catalytic Reforming) في المصافي؟',
+                options: ['تحويل النفثا الثقيلة ذات العدد الأوكتاني المنخفض إلى بنزين عالي الأوكتان', 'إنتاج الأسفلت للشوارع', 'إزالة الماء من النفط الخام', 'توليد البخار للمراجل'],
+                ans: 0,
+                exp: 'وحدة التهذيب (Reforming) تعيد ترتيب الجزيئات الهيدروكربونية لرفع العدد الأوكتاني للبنزين وإنتاج الهيدروجين كمنتج ثانوي مفيد.'
+            },
+            {
+                id: 18, dept: 'refining', term: 'term1',
+                q: 'في المبادلات الحرارية (Shell and Tube Heat Exchangers)، ما هو الغرض من وجود العوارض (Baffles) داخل الغلاف؟',
+                options: ['إغلاق المبادل ومنع مرور السائل', 'توجيه السائل بمسار متعرج لزيادة الاضطراب وكفاءة انتقال الحرارة وتثبيت الأنابيب', 'تقليل ضغط المضخة', 'تنقية السائل من الشوائب'],
+                ans: 1,
+                exp: 'العوارض (Baffles) تمنع انحناء الأنابيب وتجبر مائع الغلاف على الجريان المتقاطع مما يزيد معامل انتقال الحرارة.'
+            },
+            {
+                id: 19, dept: 'refining', term: 'term2',
+                q: 'ما هو المكون الرئيسي للغاز المسال المنزلي (LPG) المنتج في معامل الغاز؟',
+                options: ['الميثان (C1)', 'خليط من البروبان (C3) والبيوتان (C4)', 'الهيدروجين النقي', 'النفثا الثقيلة'],
+                ans: 1,
+                exp: 'غاز الطبخ (LPG) يتكون من البروبان والبيوتان اللذين يسهل إسالتهما تحت ضغط معتدل.'
+            },
+            {
+                id: 20, dept: 'refining', term: 'secondRound',
+                q: 'ما هو الغرض من حقن السائل الراجع (Reflux) إلى قمة برج التقطير؟',
+                options: ['زيادة درجة حرارة قاع البرج', 'السيطرة على درجة حرارة قمة البرج وزيادة نقاوة المنتج العلوي', 'إيقاف عملية التقطير', 'تنظيف البرج من الكبريت'],
+                ans: 1,
+                exp: 'الراجع البارد (Reflux) يكثف الأبخرة الثقيلة الصاعدة ويعيدها للأسفل، مما يضمن نقاوة القطفة العلوية واستقرار حرارة القمة.'
+            },
+            {
+                id: 21, dept: 'refining', term: 'term2',
+                q: 'ماذا يشير ارتفاع "العدد الأوكتاني" (Octane Number) لوقود البنزين؟',
+                options: ['مقاومة البنزين العالية للفرقعة (Knocking) داخل أسطوانات المحرك', 'ارتفاع نسبة الكبريت في الوقود', 'زيادة كثافة الوقود', 'انخفاض درجة تجمد الوقود'],
+                ans: 0,
+                exp: 'العدد الأوكتاني يقيس قدرة البنزين على تحمل الانضغاط داخل المحرك دون اشتعال ذاتي مبكر يسبب الطرق (Knocking).'
+            },
+            {
+                id: 22, dept: 'refining', term: 'secondRound',
+                q: 'في فحص اللزوجة الكينماتيكية (Kinematic Viscosity)، ما هي وحدة القياس القياسية المستخدمة في المختبرات النفطية؟',
+                options: ['سنتي ستوك (cSt)', 'بار (Bar)', 'واط (Watt)', 'كيلوغرام (kg)'],
+                ans: 0,
+                exp: 'تُقاس اللزوجة الكينماتيكية بوحدة سنتي ستوك (cSt أو mm²/s) عند درجات حرارة قياسية مثل 40°C و 100°C.'
+            },
+
+            // --- قسم الميكانيك (Mechanics & HSE) ---
+            {
+                id: 23, dept: 'mechanics', term: 'term1',
+                q: 'ما هي ظاهرة التكهف (Cavitation) التي تحدث في المضخات الطاردة المركزية؟',
+                options: ['تكون فقاعات بخارية عند مدخل المضخة بسبب انخفاض الضغط دون ضغط التبخر ثم انفجارها محدثة تآكلاً وضجيجاً', 'ارتفاع سرعة المحرك الكهربائي', 'تجمد السائل داخل المضخة', 'زيادة سمك أنبوب السحب'],
+                ans: 0,
+                exp: 'التكهف يدمر بشارة المضخة (Impeller) ويسبب اهتزازات شديدة، ويُمنع بتوفير صافي شحنة سحب موجبة (NPSHa > NPSHr).'
+            },
+            {
+                id: 24, dept: 'mechanics', term: 'term1',
+                q: 'ما هو الغرض من إجراء عملية الترصيف (Alignment) بين محور المحرك ومحور المضخة؟',
+                options: ['زيادة استهلاك الكهرباء', 'جعل مركزي المحورين على استقامة واحدة لمنع الاهتزازات وتلف المحامل والموانع', 'تغيير اتجاه دوران المضخة', 'تقليل ضغط السحب'],
+                ans: 1,
+                exp: 'عدم الترصيف (Misalignment) هو السبب الأول لتلف الـ Bearings والـ Mechanical Seals في المعدات الدوارة.'
+            },
+            {
+                id: 25, dept: 'mechanics', term: 'term2',
+                q: 'في تقنيات اللحام، ماذا تعني وضعية اللحام (6G) عند فحص وتأهيل لحامي الأنابيب النفطية؟',
+                options: ['لحام أنبوب أفقي قابل للتدوير', 'لحام أنبوب ثابت مائل بزاوية 45 درجة وهو أصعب وأشمل اختبار للحامين', 'لحام صفيحة مسطحة على الأرض', 'لحام عمودي لخزان ماء'],
+                ans: 1,
+                exp: 'وضعية 6G تشمل جميع وضعيات اللحام في آنٍ واحد (المسطح والعمودي وفوق الرأس) مع ثبات الأنبوب بزاوية 45 درجة.'
+            },
+            {
+                id: 26, dept: 'mechanics', term: 'term2',
+                q: 'أي فحص من الفحوصات اللاإتلافية (NDT) يُستخدم للكشف عن العيوب الداخلية العميقة في وصلات لحام الأنابيب؟',
+                options: ['الفحص بالتصوير الإشعاعي (RT) والأمواج فوق الصوتية (UT)', 'الفحص البصري بالعين المجردة فقط', 'القياس بالمسطرة المعدنية', 'فحص الوزن'],
+                ans: 0,
+                exp: 'الأشعة السينية/غاما (RT) والأمواج فوق الصوتية (UT) تخترق معدن اللحام لتكشف الشقوق الداخلية والخبث ونقص الانصهار.'
+            },
+            {
+                id: 27, dept: 'mechanics', term: 'secondRound',
+                q: 'في مجال السلامة المهنية (HSE)، ما هي الخطورة القصوى لغاز كبريتيد الهيدروجين (H2S) عند التراكيز العالية؟',
+                options: ['رائحته تشبه البيض الفاسد وتزداد وضوحاً كلما زاد التركيز', 'يشل حاسة الشم فوراً فيفقد العامل القدرة على شمه ويسبب الوفاة السريعة', 'يسبب البرودة فقط', 'يساعد على التنفس'],
+                ans: 1,
+                exp: 'خطورة H2S القاتلة تكمن في أنه يخدر العصب الشمي عند تراكيز 100 ppm فأكثر، لذا يجب الاعتماد على أجهزة الكشف وليس حاسة الشم.'
+            },
+            {
+                id: 28, dept: 'mechanics', term: 'secondRound',
+                q: 'ما هو مبدأ عمل الحماية الكاثودية (Cathodic Protection) لحماية خطوط الأنابيب المدفونة من التآكل؟',
+                options: ['جعل الأنبوب يعمل كمهبط (Cathode) بإمداده بالإلكترونات من أقطاب مضحية أو تيار قسري', 'طلاء الأنبوب بالزيت فقط', 'تسخين الأنبوب باستمرار', 'زيادة سرعة النفط داخل الأنبوب'],
+                ans: 0,
+                exp: 'التآكل يحدث عند المصعد (Anode)، وبجعل الأنبوب كاثوداً تتوقف عملية فقدان الإلكترونات والصدأ.'
+            },
+            {
+                id: 29, dept: 'mechanics', term: 'term1',
+                q: 'أي نوع من الصمامات يُستخدم بشكل مثالي للفتح الكامل أو الإغلاق الكامل في خطوط الأنابيب ولا يُفضل للخنق (Throttling)؟',
+                options: ['الصمام البوابي (Gate Valve)', 'الصمام الإبري (Needle Valve)', 'صمام السيطرة الكروي (Globe Control Valve)', 'صمام عدم الرجوع (Check Valve)'],
+                ans: 0,
+                exp: 'الصمام البوابي (Gate Valve) يعطي أقل مقاومة للجريان عند الفتح الكامل، لكن استخدامه نصف مفتوح يسبب تآكل البوابة واهتزازها.'
+            },
+            {
+                id: 30, dept: 'mechanics', term: 'term2',
+                q: 'ما هو الغرض من إرسال الكاشطات الذكية (Intelligent Pigs) داخل خطوط الأنابيب النفطية؟',
+                options: ['زيادة ضغط المضخات', 'فحص سماكة جدار الأنبوب والكشف عن التآكل والانبعاجات من الداخل دون إيقاف الضخ', 'تلوين النفط الخام', 'تسخين الأنبوب'],
+                ans: 1,
+                exp: 'الكاشطات الذكية مزودة بحساسات مغناطيسية أو فوق صوتية لمسح جدار الأنبوب الداخلي وتحديد مواقع التآكل بدقة.'
+            },
+            {
+                id: 31, dept: 'mechanics', term: 'secondRound',
+                q: 'ما هو الصنف (Class B) في تصنيف الحرائق الصناعية؟',
+                options: ['حرائق المواد الصلبة كالخشب والورق', 'حرائق السوائل القابلة للاشتعال كالنفط الخام والبنزين والزيوت', 'حرائق المعادن كالمغنيسيوم', 'حرائق المعدات الكهربائية'],
+                ans: 1,
+                exp: 'حرائق الصنف B تشمل السوائل والغازات القابلة للاشتعال وتُكافح بالرغوة (Foam) أو البودرة الكيميائية الجافة أو CO2.'
+            },
+            {
+                id: 32, dept: 'mechanics', term: 'term1',
+                q: 'ما وظيفة الحشوة الميكانيكية (Mechanical Seal) في المضخات النفطية؟',
+                options: ['زيادة سرعة دوران المحرك', 'منع تسرب السائل المضخوخ حول عمود الدوران (Shaft) بكفاءة عالية', 'تبريد المحرك الكهربائي', 'ربط المضخة بالقاعدة'],
+                ans: 1,
+                exp: 'Mechanical Seal يمنع التسرب بين الجزء الدوار والجزء الثابت في المضخة وهو ضروري للسوائل النفطية الخطرة.'
+            },
+            {
+                id: 33, dept: 'mechanics', term: 'secondRound',
+                q: 'ماذا يعني نظام (LOTO - Lockout / Tagout) في صيانة المعدات النفطية؟',
+                options: ['نظام لزيادة سرعة الإنتاج', 'عزل مصادر الطاقة (الكهربائية والهيدروليكية) وإقفالها ووضع بطاقة تحذير قبل بدء الصيانة', 'نوع من أنواع اللحام', 'فحص ضغط الإطارات'],
+                ans: 1,
+                exp: 'نظام العزل والإغلاق LOTO يمنع التشغيل العرضي للمعدة أثناء وجود الفنيين للصيانة وهو إجراء سلامة إلزامي.'
+            },
+
+            // --- قسم الكهرباء والقياس والسيطرة (Electrical & Instrumentation) ---
+            {
+                id: 34, dept: 'electrical', term: 'term1',
+                q: 'ما هي الإشارة الكهربائية القياسية المعتمدة لنقل البيانات من المرسلات الصناعية (Transmitters) إلى غرف السيطرة؟',
+                options: ['4 - 20 mA (ملي أمبير)', '0 - 220 V (فولت)', '100 - 500 A (أمبير)', '1 - 5 Hz (هرتز)'],
+                ans: 0,
+                exp: 'إشارة (4-20 mA) هي المعيار العالمي في الصناعة النفطية لأن الصفر الحي (4mA) يميز بين قيمة الصفر الحقيقية وبين انقطاع السلك (0mA).'
+            },
+            {
+                id: 35, dept: 'electrical', term: 'term1',
+                q: 'إذا كانت مرسلة ضغط مداها (0 إلى 100 bar) وتخرج إشارة (12 mA)، فكم تبلغ قيمة الضغط المقاسة؟',
+                options: ['50 bar', '25 bar', '75 bar', '12 bar'],
+                ans: 0,
+                exp: 'الإشارة 12 mA تقع في منتصف المدى (4 إلى 20 mA) تماماً (50%)، لذا الضغط المقاس هو 50% من 100 bar ويساوي 50 bar.'
+            },
+            {
+                id: 36, dept: 'electrical', term: 'term2',
+                q: 'ما هو مبدأ عمل المزدوجة الحرارية (Thermocouple) المستخدمة في قياس درجات الحرارة العالية في الأفران؟',
+                options: ['تغير المقاومة الكهربائية مع الحرارة', 'تولد جهد كهربائي صغير (ملي فولت) عند اتصال معدنين مختلفين وتعرضهما لفرق درجات حرارة (تأثير سيبك)', 'تمدد الزئبق في أنبوب زجاجي', 'تغير السعة الكهربائية'],
+                ans: 1,
+                exp: 'تعتمد الثرموكبل على تأثير سيبك (Seebeck Effect) وتتحمل درجات حرارة عالية جداً تصل لأكثر من 1200°C.'
+            },
+            {
+                id: 37, dept: 'electrical', term: 'term2',
+                q: 'ما هي وظيفة محدد الموضع (Valve Positioner) المركب على صمام السيطرة الهوائي؟',
+                options: ['ضمان وصول ساق الصمام إلى الفتحة الدقيقة المطابقة لإشارة السيطرة والتغلب على الاحتكاك', 'قطع التيار الكهربائي عن المصنع', 'قياس درجة حرارة النفط', 'تبريد هواء الأجهزة'],
+                ans: 0,
+                exp: 'الـ Positioner يقارن وضع ساق الصمام الفعلي مع إشارة التحكم (4-20mA) ويعدل ضغط الهواء للمشغل لتحقيق دقة عالية.'
+            },
+            {
+                id: 38, dept: 'electrical', term: 'secondRound',
+                q: 'ماذا تعني وضعية صمام السيطرة (Fail Close - FC / Air to Open) عند انقطاع هواء الأجهزة (Instrument Air)؟',
+                options: ['يبقى الصمام مفتوحاً بالكامل', 'يغلق الصمام تلقائياً بفعل النابض (Spring) لتأمين العملية الصناعية', 'ينفجر الصمام', 'يتحول للعمل بالماء'],
+                ans: 1,
+                exp: 'في صمامات (Air to Open)، يقوم ضغط الهواء بفتح الصمام، وعند انقطاع الهواء يدفع النابض الساق لإغلاق الصمام وحماية المنشأة.'
+            },
+            {
+                id: 39, dept: 'electrical', term: 'secondRound',
+                q: 'أي جهاز يُستخدم في ورش الكهرباء لفحص مقاومة العزل الكهربائي (Insulation Resistance) لملفات المحركات والقابلوات بجهد عالٍ؟',
+                options: ['جهاز الميكر (Megger)', 'الأميتر الاعتيادي', 'المفك الفاحص', 'الترمومتر'],
+                ans: 0,
+                exp: 'جهاز الميكر (Megger) يسلط جهداً مستمراً عالياً (500V أو 1000V) لقياس مقاومة العزل بالميغا أوم والتأكد من سلامة العوازل.'
+            },
+            {
+                id: 40, dept: 'electrical', term: 'term1',
+                q: 'لماذا يتم استخدام طريقة البدء (Star - Delta) لتشغيل المحركات الحثية ثلاثية الطور ذات القدرات المتوسطة والكبيرة؟',
+                options: ['لتقليل تيار البدء العالي (Starting Current) إلى الثلث وحماية الشبكة والمحرك', 'لعكس اتجاه دوران المحرك', 'لزيادة سرعة المحرك للضعف', 'لتقليل وزن المحرك'],
+                ans: 0,
+                exp: 'البدء بتوصيلة ستار (Star) يخفض الجهد على كل ملف إلى 1/√3 وبالتالي ينخفض تيار البدء المسحوب من الشبكة إلى الثلث.'
+            },
+            {
+                id: 41, dept: 'electrical', term: 'term2',
+                q: 'ما هو الغرض من استخدام مغيرات السرعة والتردد (VSD / VFD) مع المضخات الكهربائية في الحقول النفطية؟',
+                options: ['التحكم في سرعة دوران المحرك ومعدل التدفق وتوفير الطاقة الكهربائية', 'تحويل التيار المستمر إلى تيار مستمر', 'إطفاء الأنوار ليلاً', 'زيادة حرارة المحرك'],
+                ans: 0,
+                exp: 'VSD يتحكم بالتردد والجهد لتغيير سرعة المحرك بسلاسة وتقليل استهلاك الطاقة بدلاً من خنق الصمامات.'
+            },
+            {
+                id: 42, dept: 'electrical', term: 'secondRound',
+                q: 'في المناطق الخطرة (Hazardous Areas) التي تحتوي على أبخرة نفطية قابلة للاشتعال، ما هو مبدأ الحماية (Intrinsic Safety - IS)؟',
+                options: ['تحديد الطاقة الكهربائية والحرارية في الدائرة بحيث تكون غير كافية لإحداث شرارة تشعل الغاز', 'وضع المحرك داخل الماء', 'زيادة الجهد الكهربائي إلى 11 كيلو فولت', 'استخدام أسلاك مكشوفة'],
+                ans: 0,
+                exp: 'السلامة الذاتية (IS) تستخدم حواجز (Zener Barriers / Isolators) لتقييد التيار والجهد في دوائر القياس والسيطرة بالمناطق الخطرة.'
+            },
+            {
+                id: 43, dept: 'electrical', term: 'term2',
+                q: 'ما هي لغة البرمجة الرسومية الأكثر انتشاراً لبرمجة أجهزة التحكم المنطقي المبرمج (PLC) في المصانع؟',
+                options: ['مخطط السلم (Ladder Diagram - LD)', 'لغة HTML', 'لغة SQL', 'لغة التصميم ثلاثي الأبعاد'],
+                ans: 0,
+                exp: 'لغة السلم (Ladder Logic) تحاكي مخططات الريليهات والكونتاكتورات الكهربائية مما يسهل قراءتها وصيانتها من قبل فنيي الكهرباء والسيطرة.'
+            },
+            {
+                id: 44, dept: 'electrical', term: 'secondRound',
+                q: 'ماذا يمثل الرمز (PT-101) في مخططات العمليات والقياس والسيطرة (P&ID)؟',
+                options: ['مرسلة ضغط (Pressure Transmitter) رقم 101', 'مضخة توربينية رقم 101', 'خزان وقود رقم 101', 'محولة كهربائية رقم 101'],
+                ans: 0,
+                exp: 'حسب معيار ISA العالمي: الحرف الأول P يعني Pressure (ضغط)، والحرف الثاني T يعني Transmitter (مرسلة).'
+            }
+        ];
+
+        // 4. بنك الأسئلة التحريرية والمقالية والمخططات
+        const essayQuestions = [
+            {
+                id: 'e1', dept: 'petroleum',
+                type: 'تعليل ومقارنة',
+                q: 'علل: يُفضل استخدام العازلات الأفقية (Horizontal Separators) في محطات عزل الغاز ذات النسبة العالية من الغاز إلى النفط (High GOR) بينما تُستخدم العمودية للآبار التي تحتوي على رمال وشوائب؟',
+                ans: '1. العازلة الأفقية تمتلك مساحة سطحية كبيرة للطور السائل مما يسهل تحرر فقاعات الغاز بسرعة وكفاءة عالية عند وجود كميات غاز كبيرة.\n2. العازلة العمودية تمتلك مساحة قاعدة صغيرة تسهل تجميع وتصريف الرمال والطمى من قاع العازلة دون إعاقة الجريان.'
+            },
+            {
+                id: 'e2', dept: 'petroleum',
+                type: 'شرح خطوات عملية',
+                q: 'عدد أهم أربع وظائف رئيسية لسائل الحفر (طين الحفر - Drilling Mud) في حفر الآبار النفطية؟',
+                ans: '1. السيطرة على الضغوط الطبقية ومنع اندفاع الموائع (Blowout) بتوليد ضغط هيدروستاتيكي كافٍ.\n2. حمل الفتات الصخري (Cuttings) من قاع البئر إلى السطح وتنظيف البئر.\n3. تبريد وتزييت الدقاقة (Bit) وخيط الحفر وتقليل الاحتكاك.\n4. تكوين كعكة طينية رقيقة (Filter Cake) على جدار البئر لمنع انهياره ومنع تسرب السائل للطبقات.'
+            },
+            {
+                id: 'e3', dept: 'refining',
+                type: 'تعريف ومبدأ عمل',
+                q: 'ما هو الفرق الجوهري بين عملية التقطير الجوي (Atmospheric Distillation) وعملية التقطير الفراغي (Vacuum Distillation) في المصافي؟',
+                ans: '• التقطير الجوي: يتم تحت ضغط يقارب الضغط الجوي وبحرارة تصل إلى 360°C لفصل المشتقات الخفيفة والمتوسطة (الغاز، النفثا، الكيروسين، زيت الغاز).\n• التقطير الفراغي: يُجرى للنفط المختزل المتبقي من قاع البرج الجوي تحت ضغط مخلخل (أقل من الضغط الجوي) لخفض درجة غليان المشتقات الثقيلة (زيوت التزييت والأسفلت) ومنع تفحمها.'
+            },
+            {
+                id: 'e4', dept: 'refining',
+                type: 'مشكلة تشغيلية وحلها',
+                q: 'ما هي ظاهرة تكون الهيدرات (Gas Hydrates) في أنابيب الغاز الطبيعي؟ وما هي طرق منع تكونها؟',
+                ans: '• الهيدرات: بلورات ثلجية صلبة تتكون من اتحاد جزيئات الماء مع الغازات الهيدروكربونية (كالميثان) تحت ضغط عالٍ ودرجة حرارة منخفضة، وتسبب انسداد الصمامات والأنابيب.\n• طرق المنع: 1) تجفيف الغاز وإزالة بخار الماء باستخدام الغلايكول (TEG). 2) حقن مثبطات الهيدرات مثل الميثانول. 3) تسخين الغاز قبل صمامات الخنق.'
+            },
+            {
+                id: 'e5', dept: 'mechanics',
+                type: 'مقارنة هندسية',
+                q: 'قارن بين المضخات الطاردة المركزية (Centrifugal Pumps) والمضخات الترددية (Reciprocating Pumps) من حيث مبدأ العمل والتطبيق النفطي؟',
+                ans: '• المضخات الطاردة المركزية: تعتمد على قوة الطرد المركزي لبشارة دوارة (Impeller)، تعطي تدفقاً مستمراً وسلساً وبكميات كبيرة، وتُستخدم في محطات ضخ النفط الخام والمصافي.\n• المضخات الترددية: تعتمد على حركة ترددية لمكبس داخل أسطوانة، تعطي ضغوطاً عالية جداً وتدفقاً متقطعاً (يحتاج مخمد نبضات)، وتُستخدم كمضخات طين الحفر ومضخات حقن الكيمياويات.'
+            },
+            {
+                id: 'e6', dept: 'mechanics',
+                type: 'إجراءات سلامة HSE',
+                q: 'اذكر خطوات تصريح العمل الساخن (Hot Work Permit) قبل البدء بعملية لحام داخل منشأة نفطية؟',
+                ans: '1. عزل المعدة أو الخط وتفريغه وتنظيفه بالبخار أو الغاز الخامل.\n2. إجراء فحص الغازات القابلة للاشتعال والسامة بجهاز الكشف والتأكد من أن نسبة الغاز المتفجر (LEL = 0%).\n3. توفير طفايات الحريق ومراقب حريق (Fire Watch) في الموقع.\n4. تغطية المجاري والفتحات القريبة لمنع تطاير الشرر إليها وتوقيع التصريح من المسؤول المخول.'
+            },
+            {
+                id: 'e7', dept: 'electrical',
+                type: 'مخطط وحسابات',
+                q: 'اشرح مكونات حلقة السيطرة المغلقة (Closed Control Loop) مع ذكر مثال تطبيقي على السيطرة على مستوى النفط في العازلة؟',
+                ans: 'تتكون حلقة السيطرة المغلقة من أربعة عناصر رئيسية:\n1. عنصر القياس والمرسلة (LT - Level Transmitter): يقيس مستوى النفط ويرسل إشارة (4-20 mA).\n2. المسيطر (LC - Level Controller): يقارن القيمة المقاسة مع القيمة المطلوبة (Set Point) ويحسب إشارة الخطأ.\n3. عنصر السيطرة النهائي (LCV - Level Control Valve): يفتح أو يغلق لتعديل كمية النفط الخارجة.\n4. العملية الصناعية (Process): العازلة نفسها.'
+            },
+            {
+                id: 'e8', dept: 'electrical',
+                type: 'فحوصات عملية',
+                q: 'ما هي الفحوصات الكهربائية الأساسية التي تُجرى على محرك حثي ثلاثي الطور (3-Phase Induction Motor) قبل إعادته للخدمة بعد الصيانة؟',
+                ans: '1. فحص مقاومة العزل (Insulation Resistance) بين الملفات وجسم المحرك وبين الأطوار باستخدام جهاز (Megger) والتأكد من أن القراءة بالميغا أوم ضمن الحد المسموح.\n2. فحص استمرارية وتماثل مقاومة الملفات الثلاثة باستخدام الأوميتر الدقيق.\n3. الفحص الميكانيكي لدوران المحور يدوياً بسلاسة والتأكد من سلامة المحامل والتأريض.'
+            }
+        ];
+
+        // 5. حالة التطبيق (State) والمحفوظات في localStorage
+        let currentLang = localStorage.getItem('oti_lang') || 'ar';
+        let currentTheme = localStorage.getItem('oti_theme') || 'default';
+        let isDark = localStorage.getItem('oti_dark') === 'true';
+        let fontSize = parseInt(localStorage.getItem('oti_fontsize')) || 16;
+        let selectedDeptId = 'petroleum';
+        let selectedSpecId = 'production';
+        let selectedSpecTab = 'year1';
+        let userAnswers = JSON.parse(localStorage.getItem('oti_quiz_answers')) || {};
+        let bestScore = localStorage.getItem('oti_best_score') || '0';
+
+        // تهيئة التطبيق عند التحميل
+        window.onload = function() {
+            // تطبيق الإعدادات المحفوظة
+            document.documentElement.style.setProperty('--base-font-size', fontSize + 'px');
+            setThemeColor(currentTheme);
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                document.getElementById('dark-icon').className = 'fa-solid fa-sun';
+            }
+            document.getElementById('lang-selector').value = currentLang;
+            changeLanguage(currentLang, false);
+            document.getElementById('saved-score-badge').textContent = bestScore + '%';
+
+            // بناء واجهة الأقسام والامتحانات
+            renderDepartmentsUI();
+            renderQuizQuestions();
+            renderEssayQuestions('all');
+        };
+
+        // تبديل اللغة
+        function changeLanguage(lang, save = true) {
+            currentLang = lang;
+            if (save) localStorage.setItem('oti_lang', lang);
+            const t = translations[lang] || translations.ar;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = t.dir;
+
+            document.getElementById('ui-app-title').textContent = t.appTitle;
+            document.getElementById('ui-app-subtitle').textContent = t.appSubtitle;
+            document.getElementById('ui-nav-guide').textContent = t.navGuide;
+            document.getElementById('ui-nav-depts').textContent = t.navDepts;
+            document.getElementById('ui-nav-exams').textContent = t.navExams;
+            document.getElementById('ui-nav-essay').textContent = t.navEssay;
+            document.getElementById('ui-badge-ministry').textContent = t.badgeMinistry;
+            document.getElementById('ui-hero-title').textContent = t.heroTitle;
+            document.getElementById('ui-hero-desc').textContent = t.heroDesc;
+            document.getElementById('ui-btn-explore-depts').textContent = t.btnExplore;
+            document.getElementById('ui-btn-start-quiz').textContent = t.btnQuiz;
+        }
+
+        // التحكم بحجم الخط
+        function adjustFontSize(delta) {
+            fontSize = Math.min(20, Math.max(13, fontSize + delta));
+            document.documentElement.style.setProperty('--base-font-size', fontSize + 'px');
+            localStorage.setItem('oti_fontsize', fontSize);
+        }
+
+        function resetFontSize() {
+            fontSize = 16;
+            document.documentElement.style.setProperty('--base-font-size', '16px');
+            localStorage.setItem('oti_fontsize', 16);
+        }
+
+        // تغيير لون الثيم
+        function setThemeColor(theme) {
+            currentTheme = theme;
+            if (theme === 'default') {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            localStorage.setItem('oti_theme', theme);
+        }
+
+        // تبديل الوضع الليلي والنهاري
+        function toggleDarkMode() {
+            isDark = !isDark;
+            document.documentElement.classList.toggle('dark', isDark);
+            document.getElementById('dark-icon').className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            localStorage.setItem('oti_dark', isDark);
+        }
+
+        // التنقل بين الواجهات الأربع الرئيسية
+        function switchMainView(viewName) {
+            ['guide', 'departments', 'exams', 'essay'].forEach(v => {
+                document.getElementById('view-' + v).classList.add('hidden');
+                const btn = document.getElementById('nav-' + v);
+                btn.classList.remove('bg-primary-600', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-200');
+            });
+
+            document.getElementById('view-' + viewName).classList.remove('hidden');
+            const activeBtn = document.getElementById('nav-' + viewName);
+            activeBtn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-200');
+            activeBtn.classList.add('bg-primary-600', 'text-white', 'shadow-sm');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // بناء واجهة الأقسام الأربعة والاختصاصات الفرعية
+        function renderDepartmentsUI() {
+            const deptContainer = document.getElementById('main-dept-buttons');
+            deptContainer.innerHTML = departmentsData.map(dept => {
+                const isActive = dept.id === selectedDeptId;
+                return `
+                    <button onclick="selectDepartment('${dept.id}')"
+                        class="p-3 sm:p-4 rounded-2xl border text-right transition flex flex-col justify-between gap-2 ${
+                            isActive 
+                            ? 'bg-primary-600 text-white border-primary-600 shadow-md' 
+                            : 'bg-slate-50 dark:bg-slate-800/70 text-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:border-primary-400'
+                        }">
+                        <div class="flex items-center justify-between w-full">
+                            <i class="fa-solid ${dept.icon} text-lg sm:text-xl ${isActive ? 'text-white' : 'text-primary-600 dark:text-primary-400'}"></i>
+                            <span class="text-[11px] font-bold px-2 py-0.5 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'}">
+                                ${dept.specializations.length} اختصاصات
+                            </span>
+                        </div>
+                        <div class="font-extrabold text-xs sm:text-sm">${dept.name}</div>
+                    </button>
+                `;
+            }).join('');
+
+            const currentDept = departmentsData.find(d => d.id === selectedDeptId);
+            document.getElementById('dept-badge-count').textContent = `${currentDept.name} (${currentDept.specializations.length} فروع)`;
+
+            const subContainer = document.getElementById('sub-spec-buttons');
+            subContainer.innerHTML = currentDept.specializations.map(spec => {
+                const isSpecActive = spec.id === selectedSpecId;
+                return `
+                    <button onclick="selectSpecialization('${spec.id}')"
+                        class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition border ${
+                            isSpecActive
+                            ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-800 dark:text-primary-200 border-primary-500 shadow-sm'
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-transparent hover:bg-slate-200 dark:hover:bg-slate-700'
+                        }">
+                        <i class="fa-solid fa-angle-left text-xs ml-1 opacity-70"></i>
+                        ${spec.name}
+                    </button>
+                `;
+            }).join('');
+
+            renderSpecializationDetails();
+        }
+
+        function selectDepartment(deptId) {
+            selectedDeptId = deptId;
+            const dept = departmentsData.find(d => d.id === deptId);
+            selectedSpecId = dept.specializations[0].id;
+            selectedSpecTab = 'year1';
+            renderDepartmentsUI();
+        }
+
+        function selectSpecialization(specId) {
+            selectedSpecId = specId;
+            renderDepartmentsUI();
+        }
+
+        function switchSpecTab(tabName) {
+            selectedSpecTab = tabName;
+            ['year1', 'year2', 'secondRound', 'career'].forEach(t => {
+                const btn = document.getElementById('tab-' + t);
+                if (t === tabName) {
+                    btn.classList.add('bg-primary-600', 'text-white', 'shadow-sm');
+                    btn.classList.remove('text-slate-700', 'dark:text-slate-300', 'hover:bg-white', 'dark:hover:bg-slate-700');
+                } else {
+                    btn.classList.remove('bg-primary-600', 'text-white', 'shadow-sm');
+                    btn.classList.add('text-slate-700', 'dark:text-slate-300', 'hover:bg-white', 'dark:hover:bg-slate-700');
+                }
+            });
+            renderSpecializationDetails();
+        }
+
+        // عرض تفاصيل المناهج للكورس 1 و2 والدور 2 وفرص العمل
+        function renderSpecializationDetails() {
+            const dept = departmentsData.find(d => d.id === selectedDeptId);
+            const spec = dept.specializations.find(s => s.id === selectedSpecId);
+
+            document.getElementById('spec-parent-label').textContent = dept.name;
+            document.getElementById('spec-title').textContent = 'اختصاص: ' + spec.name;
+            document.getElementById('spec-desc').textContent = spec.desc;
+
+            const contentDiv = document.getElementById('spec-tab-content');
+
+            if (selectedSpecTab === 'year1' || selectedSpecTab === 'year2') {
+                const yearObj = selectedSpecTab === 'year1' ? spec.year1 : spec.year2;
+                const yearLabel = selectedSpecTab === 'year1' ? 'المرحلة الأولى' : 'المرحلة الثانية';
+
+                contentDiv.innerHTML = `
+                    <div class="space-y-6">
+                        ${renderCourseTable(yearLabel + ' — الكورس الأول (الفصل الدراسي الأول)', yearObj.term1, 'sky')}
+                        ${renderCourseTable(yearLabel + ' — الكورس الثاني (الفصل الدراسي الثاني)', yearObj.term2, 'emerald')}
+                    </div>
+                `;
+            } else if (selectedSpecTab === 'secondRound') {
+                const sr = spec.secondRound;
+                contentDiv.innerHTML = `
+                    <div class="space-y-5">
+                        <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 p-4 rounded-2xl">
+                            <h4 class="font-extrabold text-amber-800 dark:text-amber-300 text-sm sm:text-base flex items-center gap-2">
+                                <i class="fa-solid fa-circle-info"></i> آلية امتحان الدور الثاني (المكملين) في هذا الاختصاص
+                            </h4>
+                            <p class="text-xs sm:text-sm text-amber-900/90 dark:text-amber-200/90 mt-2 leading-relaxed">
+                                ${sr.rules}
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-700">
+                                <h5 class="font-extrabold text-primary-700 dark:text-primary-400 text-sm mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-book"></i> أبرز المواد النظرية المشمولة بالدور الثاني:
+                                </h5>
+                                <ul class="space-y-2 text-xs sm:text-sm">
+                                    ${sr.theoreticalSubjects.map(sub => `
+                                        <li class="flex items-center gap-2 bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-slate-100 dark:border-slate-800">
+                                            <span class="w-2 h-2 rounded-full bg-primary-600 shrink-0"></span>
+                                            <span class="font-bold">${sub}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-700">
+                                <h5 class="font-extrabold text-emerald-700 dark:text-emerald-400 text-sm mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-flask"></i> الاختبارات العملية (المختبر والورشة) في الدور الثاني:
+                                </h5>
+                                <ul class="space-y-2 text-xs sm:text-sm">
+                                    ${sr.practicalSubjects.map(sub => `
+                                        <li class="flex items-center gap-2 bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-slate-100 dark:border-slate-800">
+                                            <span class="w-2 h-2 rounded-full bg-emerald-600 shrink-0"></span>
+                                            <span class="font-bold">${sub}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (selectedSpecTab === 'career') {
+                contentDiv.innerHTML = `
+                    <div class="bg-slate-50 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+                        <h4 class="font-extrabold text-base sm:text-lg text-primary-700 dark:text-primary-400 flex items-center gap-2">
+                            <i class="fa-solid fa-building-user"></i> المسار الوظيفي وأماكن العمل بعد التخرج
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                            ${spec.career}
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                            <div class="bg-white dark:bg-slate-900 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
+                                <div class="text-xs text-slate-500">العنوان الوظيفي</div>
+                                <div class="font-extrabold text-sm text-slate-900 dark:text-white mt-1">معاون مهندس / فني نفطي</div>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
+                                <div class="text-xs text-slate-500">الدرجة الوظيفية</div>
+                                <div class="font-extrabold text-sm text-slate-900 dark:text-white mt-1">الدرجة الثامنة (دبلوم تقني)</div>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
+                                <div class="text-xs text-slate-500">الشركات المستفيدة</div>
+                                <div class="font-extrabold text-sm text-slate-900 dark:text-white mt-1">نفط الشمال، المصافي، الغاز، الحفر</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // دالة مساعدة لرسم جدول المواد الدراسية لكل كورس
+        function renderCourseTable(title, subjects, colorTheme) {
+            return `
+                <div class="space-y-3 print-break">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-${colorTheme}-500"></span>
+                            ${title}
+                        </h4>
+                        <span class="text-xs font-bold text-slate-500 dark:text-slate-400">${subjects.length} مواد دراسية</span>
+                    </div>
+                    <div class="grid grid-cols-1 gap-2.5">
+                        ${subjects.map((sub, idx) => `
+                            <div class="bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100/80 dark:hover:bg-slate-800 p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 transition">
+                                <div class="flex flex-wrap items-center justify-between gap-2">
+                                    <div class="font-extrabold text-xs sm:text-sm text-slate-900 dark:text-white">
+                                        <span class="text-primary-600 dark:text-primary-400 ml-1">${idx + 1}.</span>
+                                        ${sub.name}
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="px-2.5 py-0.5 rounded-lg text-[11px] font-bold ${
+                                            sub.type.includes('عملي') || sub.type.includes('مختبر') || sub.type.includes('ورشة') || sub.type.includes('محاكي')
+                                            ? 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300'
+                                            : 'bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300'
+                                        }">
+                                            ${sub.type}
+                                        </span>
+                                        <span class="px-2 py-0.5 rounded-lg text-[11px] font-bold bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
+                                            ${sub.hours} ساعات/أسبوع
+                                        </span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
+                                    <strong>مفردات المنهج:</strong> ${sub.topics}
+                                </p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // =========================================================
+        // منطق بنك الأسئلة والامتحانات التفاعلية
+        // =========================================================
+        function renderQuizQuestions() {
+            const deptFilter = document.getElementById('quiz-dept-filter').value;
+            const termFilter = document.getElementById('quiz-term-filter').value;
+
+            const filtered = quizDatabase.filter(q => {
+                const matchDept = deptFilter === 'all' || q.dept === deptFilter;
+                const matchTerm = termFilter === 'all' || q.term === termFilter;
+                return matchDept && matchTerm;
+            });
+
+            document.getElementById('total-q-counter').textContent = filtered.length;
+            const container = document.getElementById('quiz-questions-list');
+
+            if (filtered.length === 0) {
+                container.innerHTML = `<div class="p-8 text-center text-slate-500 bg-white dark:bg-slate-900 rounded-3xl">لا توجد أسئلة مطابقة لهذا الفلتر حالياً.</div>`;
+                return;
+            }
+
+            const deptNames = { petroleum: 'قسم النفط', refining: 'التصفية والغاز', mechanics: 'الميكانيك', electrical: 'الكهرباء والقياس' };
+            const termNames = { term1: 'كورس أول', term2: 'كورس ثاني', secondRound: 'دور ثاني' };
+
+            container.innerHTML = filtered.map((item, idx) => {
+                const chosen = userAnswers[item.id];
+                const isAnswered = chosen !== undefined;
+
+                return `
+                    <div class="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 print-break">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="text-xs font-extrabold text-primary-600 dark:text-primary-400">سؤال #${idx + 1}</span>
+                            <div class="flex gap-1.5">
+                                <span class="px-2.5 py-0.5 rounded-lg text-[11px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${deptNames[item.dept]}</span>
+                                <span class="px-2.5 py-0.5 rounded-lg text-[11px] font-bold bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300">${termNames[item.term]}</span>
+                            </div>
+                        </div>
+
+                        <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-relaxed">
+                            ${item.q}
+                        </h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                            ${item.options.map((opt, optIdx) => {
+                                let btnStyle = 'bg-slate-50 dark:bg-slate-800/70 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-primary-400';
+                                let iconHtml = '';
+
+                                if (isAnswered) {
+                                    if (optIdx === item.ans) {
+                                        btnStyle = 'bg-emerald-50 dark:bg-emerald-950/60 border-emerald-500 text-emerald-800 dark:text-emerald-200 font-bold';
+                                        iconHtml = '<i class="fa-solid fa-circle-check text-emerald-600 shrink-0"></i>';
+                                    } else if (optIdx === chosen && chosen !== item.ans) {
+                                        btnStyle = 'bg-rose-50 dark:bg-rose-950/60 border-rose-500 text-rose-800 dark:text-rose-200';
+                                        iconHtml = '<i class="fa-solid fa-circle-xmark text-rose-600 shrink-0"></i>';
+                                    }
+                                }
+
+                                return `
+                                    <button onclick="selectQuizAnswer(${item.id}, ${optIdx})"
+                                        class="p-3 rounded-2xl border text-right text-xs sm:text-sm transition flex items-center justify-between gap-2 ${btnStyle}">
+                                        <span>${opt}</span>
+                                        ${iconHtml}
+                                    </button>
+                                `;
+                            }).join('')}
+                        </div>
+
+                        ${isAnswered ? `
+                            <div class="p-3 rounded-2xl text-xs sm:text-sm leading-relaxed ${
+                                chosen === item.ans 
+                                ? 'bg-emerald-50/70 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800/50' 
+                                : 'bg-amber-50/70 dark:bg-amber-900/20 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800/50'
+                            }">
+                                <strong><i class="fa-solid fa-lightbulb ml-1"></i> التوضيح العلمي:</strong> ${item.exp}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function selectQuizAnswer(qId, optIdx) {
+            userAnswers[qId] = optIdx;
+            localStorage.setItem('oti_quiz_answers', JSON.stringify(userAnswers));
+            renderQuizQuestions();
+        }
+
+        function gradeFullExam() {
+            const deptFilter = document.getElementById('quiz-dept-filter').value;
+            const termFilter = document.getElementById('quiz-term-filter').value;
+            const filtered = quizDatabase.filter(q => {
+                return (deptFilter === 'all' || q.dept === deptFilter) && (termFilter === 'all' || q.term === termFilter);
+            });
+
+            if (filtered.length === 0) return;
+
+            let correctCount = 0;
+            let answeredCount = 0;
+            filtered.forEach(q => {
+                if (userAnswers[q.id] !== undefined) {
+                    answeredCount++;
+                    if (userAnswers[q.id] === q.ans) correctCount++;
+                }
+            });
+
+            const percentage = Math.round((correctCount / filtered.length) * 100);
+            const passed = percentage >= 60;
+
+            if (percentage > parseInt(bestScore)) {
+                bestScore = percentage.toString();
+                localStorage.setItem('oti_best_score', bestScore);
+                document.getElementById('saved-score-badge').textContent = bestScore + '%';
+            }
+
+            const banner = document.getElementById('exam-result-banner');
+            banner.classList.remove('hidden', 'bg-emerald-50', 'border-emerald-500', 'bg-rose-50', 'border-rose-500');
+            if (passed) {
+                banner.classList.add('bg-emerald-50', 'dark:bg-emerald-950/50', 'border-emerald-500', 'text-emerald-900', 'dark:text-emerald-100');
+            } else {
+                banner.classList.add('bg-rose-50', 'dark:bg-rose-950/50', 'border-rose-500', 'text-rose-900', 'dark:text-rose-100');
+            }
+
+            banner.innerHTML = `
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div>
+                        <div class="font-extrabold text-base sm:text-lg">
+                            ${passed ? '🎉 مبارك! النتيجة ناجح (اجتزت حد النجاح 60%)' : '⚠️ النتيجة أقل من 60% (تحتاج مراجعة للدور الثاني)'}
+                        </div>
+                        <p class="text-xs sm:text-sm mt-1">
+                            أجبت بشكل صحيح على <strong>${correctCount}</strong> من أصل <strong>${filtered.length}</strong> سؤالاً (عدد الأسئلة المجابة: ${answeredCount}).
+                        </p>
+                    </div>
+                    <div class="text-2xl sm:text-3xl font-extrabold px-4 py-2 rounded-2xl bg-white/80 dark:bg-slate-900/80 shadow-sm">
+                        ${percentage}%
+                    </div>
+                </div>
+            `;
+        }
+
+        function resetExamAnswers() {
+            userAnswers = {};
+            localStorage.removeItem('oti_quiz_answers');
+            document.getElementById('exam-result-banner').classList.add('hidden');
+            renderQuizQuestions();
+        }
+
+        // =========================================================
+        // منطق الأسئلة التحريرية والمقالية
+        // =========================================================
+        function filterEssays(dept) {
+            document.querySelectorAll('.essay-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-primary-600', 'text-white');
+                btn.classList.add('bg-slate-100', 'dark:bg-slate-800');
+            });
+            event.target.classList.remove('bg-slate-100', 'dark:bg-slate-800');
+            event.target.classList.add('bg-primary-600', 'text-white');
+            renderEssayQuestions(dept);
+        }
+
+        function renderEssayQuestions(deptFilter) {
+            const list = deptFilter === 'all' ? essayQuestions : essayQuestions.filter(e => e.dept === deptFilter);
+            const container = document.getElementById('essay-questions-container');
+
+            container.innerHTML = list.map((item, idx) => `
+                <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden print-break">
+                    <button onclick="toggleEssayAns('${item.id}')" class="w-full p-4 sm:p-5 text-right flex items-start justify-between gap-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                        <div class="space-y-1.5">
+                            <span class="inline-block px-2.5 py-0.5 rounded-lg text-[11px] font-bold bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300">
+                                ${item.type}
+                            </span>
+                            <h3 class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white leading-relaxed">
+                                س${idx + 1}: ${item.q}
+                            </h3>
+                        </div>
+                        <div class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 mt-1">
+                            <i id="icon-${item.id}" class="fa-solid fa-chevron-down text-xs transition-transform"></i>
+                        </div>
+                    </button>
+                    <div id="ans-${item.id}" class="hidden px-4 sm:px-5 pb-5 pt-2 border-t border-slate-100 dark:border-slate-800 bg-emerald-50/40 dark:bg-emerald-950/20">
+                        <div class="text-xs font-extrabold text-emerald-700 dark:text-emerald-400 mb-1.5">الإجابة النموذجية:</div>
+                        <div class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 whitespace-pre-line leading-relaxed">${item.ans}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleEssayAns(id) {
+            const ansDiv = document.getElementById('ans-' + id);
+            const icon = document.getElementById('icon-' + id);
+            ansDiv.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+    </script>
+</body>
+</html>
+```
